@@ -9,9 +9,10 @@
   "latedef"  : "nofunc",
   "laxbreak" : true,
   "nonbsp"   : true,
-  "strict"   : true,
+  "strict"   : false,
   "undef"    : true,
   "unused"   : true,
+  "esnext"   : true,
   // External variabls and plugins
   "predef":  [ "AdminLTEOptions", "FastClick", "moment", "Morris", "Chart" ]
 }

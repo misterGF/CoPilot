@@ -1,8 +1,112 @@
+// Import System requirements
 import Vue from 'vue'
-import App from './App'
+import Router from 'vue-router'
+import Resource from 'vue-resource'
 
-/* eslint-disable no-new */
-new Vue({
-  el: 'body',
-  components: { App }
+// Import Helpers for filters
+import { domain, count, prettyDate, pluralize } from './filters'
+
+// Import Views - Top level
+import AppView from './components/App.vue'
+import DashView from './components/Dash.vue'
+import LoginView from './components/Login.vue'
+import NotFoundView from './components/404.vue'
+
+// Import Views - Dash
+import DashboardView from './components/dash/Dashboard.vue'
+import TablesView from './components/dash/Tables.vue'
+import TasksView from './components/dash/Tasks.vue'
+import SettingView from './components/dash/Setting.vue'
+import AccessView from './components/dash/Access.vue'
+import ServerView from './components/dash/Server.vue'
+import VisitorView from './components/dash/Visitor.vue'
+
+// Import Install and register helper items
+Vue.use(Router)
+Vue.filter('count', count)
+Vue.filter('domain', domain)
+Vue.filter('prettyDate', prettyDate)
+Vue.filter('pluralize', pluralize)
+
+// Routing logic
+var router = new Router({
+  history: true,
+  saveScrollPosition: true
 })
+
+// Routes
+router.map({
+  '/login': {
+    component: LoginView
+  },
+  '/': {
+    component: DashView,
+    auth: true,
+    subRoutes: {
+      '': {
+        component: DashboardView,
+        name: 'Dashboard',
+        description: 'Overview of environment'
+      },
+      '/tables': {
+        component: TablesView
+      },
+      '/tasks': {
+        component: TasksView
+      },
+      '/setting': {
+        component: SettingView
+      },
+      '/access': {
+        component: AccessView
+      },
+      '/server': {
+        component: ServerView
+      },
+      '/visitors': {
+        component: VisitorView
+      }
+    }
+  },
+  // not found handler
+  '*': {
+    component: NotFoundView
+  }
+})
+
+// Redirect for shortcuts
+router.redirect({
+  '/jobs': '/user/jobs',
+  '/me': '/user'
+})
+
+// Some middleware to help us ensure the user is authenticated.
+router.beforeEach(function (transition) {
+  if (transition.to.auth && (transition.to.router.app.$store.state.token === 'null')) {
+    window.console.log('Not authenticated')
+    transition.redirect('/login')
+  } else {
+    transition.next()
+  }
+})
+
+// Resource logic
+Vue.use(Resource)
+Vue.http.interceptors.push({
+  request: function (request) {
+    var headers = request.headers
+
+    if (window.location.pathname !== '/login' && !headers.hasOwnProperty('Authorization')) {
+      headers.Authorization = this.$store.state.token
+    }
+    // console.log(headers)
+    return request
+  },
+  response: function (response) {
+    return response
+  }
+})
+
+// Start out app!
+Vue.config.debug = true
+router.start(AppView, '#root')

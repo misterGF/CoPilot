@@ -6,11 +6,15 @@ Introduction
 
 **CoPilot** is a fully responsive admin template that is forked from [AdminLTE](https://almsaeedstudio.com). The difference here is that this repo is tailored to use with vue.js. The UI is based on the [Bootstrap 3](https://github.com/twbs/bootstrap) framework. Highly customizable and easy to use. Fits many screen resolutions from small mobile devices to large desktops.
 
+In an attempt to keep the project clean I have not included every plugin/feature that AdminLTE offers. You simply need to add the plugin in the /static/js/plugin folder to include them. I've included the popular ones.
+
 The structure of the app is scaffolded by [vue-cli](https://github.com/vuejs/vue-cli). Which is a simple CLI tool that setups our environment. CoPilot uses the webpack package. So we get a full-featured Webpack + vue-loader setup with hot reload, linting, testing & css extraction.
 
 We leverage all the goodies that vue.js offers. Vue-Router for routing. Vue-Resource for AJAX calls. Vuex for state management.
 
 I also recommend that you install vue-devtools for Chrome so that you can easily inspect that state of vue.
+
+The data that is being pulled uses faker.js to make it dynamic. This is for demo purposes. Look for demo.* for information that is generated dynamically.
 
 Installation
 ------------
@@ -63,7 +67,7 @@ Depending on the component you are working on you should have the following link
 - Vue-Router - [online documentation](https://github.com/vuejs/vue-router)
 - Vuex - [online documentation](https://github.com/vuejs/vuex)
 
-Information and tips about CoPilot can be found in the [wiki](https://github.com/misterGF/CoPilot/wiki/Details).
+Information and tips about CoPilot can be found in the [wiki](https://github.com/misterGF/CoPilot/wiki).
 
 Browser Support
 ---------------
