@@ -11,8 +11,7 @@
   "nonbsp"   : true,
   "strict"   : false,
   "undef"    : true,
-  "unused"   : true,
+  "unused"   : false,
   "esnext"   : true,
-  // External variabls and plugins
   "predef":  [ "AdminLTEOptions", "FastClick", "moment", "Morris", "Chart" ]
 }

@@ -156,17 +156,16 @@
         <ul class="sidebar-menu">
           <li class="header">TOOLS</li>
           <li class="active"><a v-link="{path: '/'}"><i class="fa fa-desktop"></i> <span>Dashboard</span></a></li>
-          <li><a  v-link="{path: '/tables'}"><i class="fa fa-table"></i> <span>Tables</span></a></li>
+          <li><a v-link="{path: '/tables'}"><i class="fa fa-table"></i> <span>Tables</span></a></li>
 
-
-          <li class="header">MY</li>
+          <li class="header">ME</li>
           <li><a v-link="{path: '/tasks'}"><i class="fa fa-tasks"></i> <span>Tasks</span></a></li>
-          <li><a  v-link="{path: '/setting'}"><i class="fa fa-cog"></i><span>Settings</span></a></li>
+          <li><a v-link="{path: '/setting'}"><i class="fa fa-cog"></i><span>Settings</span></a></li>
 
           <li class="header">LOGS</li>
-          <li><a  v-link="{path: '/access'}"><i class="fa fa-book"></i><span>Access</span></a></li>
-          <li><a  v-link="{path: '/server'}"><i class="fa fa-hdd-o"></i><span>Server</span></a></li>
-          <li><a  v-link="{path: '/visitors'}"><i class="fa fa-heart"></i><span>Visitors</span></a></li>
+          <li><a v-link="{path: '/access'}"><i class="fa fa-book"></i><span>Access</span></a></li>
+          <li><a v-link="{path: '/server'}"><i class="fa fa-hdd-o"></i><span>Server</span></a></li>
+          <li><a v-link="{path: '/visitors'}"><i class="fa fa-heart"></i><span>Visitors</span></a></li>
 
           <li class="header">PAGES</li>
           <li><a v-link="{path: '/login'}"><i class="fa fa-circle-o text-yellow"></i> <span>Login</span></a></li>
