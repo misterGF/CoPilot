@@ -51,10 +51,11 @@ router.map({
       '/tables': {
         component: TablesView,
         name: 'Tables',
-        description: 'Example of tables in CoPilot'
+        description: 'Simple and advance table in CoPilot'
       },
       '/tasks': {
-        component: TasksView
+        component: TasksView,
+        description: 'Tasks page in the form of a timeline'
       },
       '/setting': {
         component: SettingView

@@ -200,7 +200,6 @@
     </footer>
   </div>
   <!-- ./wrapper -->
-
 </template>
 
 <script>
