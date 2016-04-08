@@ -141,9 +141,9 @@
         </div>
 
         <!-- search form (Optional) -->
-        <form action="#" method="get" class="sidebar-form">
+        <form v-on:submit.prevent class="sidebar-form">
           <div class="input-group">
-            <input type="text" name="q" class="form-control" placeholder="Search...">
+            <input type="text" name="search" id="search" class="search form-control" data-toggle="hideseek" placeholder="Search Menus" data-list=".sidebar-menu">
                 <span class="input-group-btn">
                   <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                   </button>
@@ -155,21 +155,21 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
           <li class="header">TOOLS</li>
-          <li class="active"><a v-link="{path: '/'}"><i class="fa fa-desktop"></i> <span>Dashboard</span></a></li>
-          <li><a v-link="{path: '/tables'}"><i class="fa fa-table"></i> <span>Tables</span></a></li>
+          <li class="active pageLink" v-on:click="toggleMenu"><a v-link="{path: '/'}"><i class="fa fa-desktop"></i><span class="page">Dashboard</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/tables'}"><i class="fa fa-table"></i><span class="page">Tables</span></a></li>
 
           <li class="header">ME</li>
-          <li><a v-link="{path: '/tasks'}"><i class="fa fa-tasks"></i> <span>Tasks</span></a></li>
-          <li><a v-link="{path: '/setting'}"><i class="fa fa-cog"></i><span>Settings</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/tasks'}"><i class="fa fa-tasks"></i><span class="page">Tasks</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/setting'}"><i class="fa fa-cog"></i><span class="page">Settings</span></a></li>
 
           <li class="header">LOGS</li>
-          <li><a v-link="{path: '/access'}"><i class="fa fa-book"></i><span>Access</span></a></li>
-          <li><a v-link="{path: '/server'}"><i class="fa fa-hdd-o"></i><span>Server</span></a></li>
-          <li><a v-link="{path: '/visitors'}"><i class="fa fa-heart"></i><span>Visitors</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/access'}"><i class="fa fa-book"></i><span class="page">Access</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/server'}"><i class="fa fa-hdd-o"></i><span class="page">Server</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/visitors'}"><i class="fa fa-heart"></i><span class="page">Visitors</span></a></li>
 
           <li class="header">PAGES</li>
-          <li><a v-link="{path: '/login'}"><i class="fa fa-circle-o text-yellow"></i> <span>Login</span></a></li>
-          <li><a v-link="{path: '/404'}"><i class="fa fa-circle-o text-red"></i> <span>404</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/login'}"><i class="fa fa-circle-o text-yellow"></i> <span class="page">Login</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/404'}"><i class="fa fa-circle-o text-red"></i> <span class="page">404</span></a></li>
         </ul>
         <!-- /.sidebar-menu -->
       </section>
@@ -204,6 +204,7 @@
 
 <script>
 import faker from 'faker'
+require('hideseek')
 
 module.exports = {
   name: 'Dash',
@@ -227,6 +228,9 @@ module.exports = {
     state: function () {
       return this.store.state
     },
+    callAPI: function () {
+      return this.$parent.callAPI
+    },
     demo: function () {
       return {
         displayName: faker.name.findName(),
@@ -239,10 +243,18 @@ module.exports = {
   methods: {
     changeloading: function () {
       this.store.dispatch('TOGGLE_SEARCHING')
+    },
+    toggleMenu: function (event) {
+      // remove active from li
+      window.$('li.pageLink').removeClass('active')
+
+      // Add it to the item that was clicked
+      event.toElement.parentElement.className = 'pageLink active'
     }
   },
   ready: function () {
     // Page is ready. Let's load our functions!
+
   }
 }
 </script>
