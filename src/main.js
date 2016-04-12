@@ -19,7 +19,7 @@ import TasksView from './components/dash/Tasks.vue'
 import SettingView from './components/dash/Setting.vue'
 import AccessView from './components/dash/Access.vue'
 import ServerView from './components/dash/Server.vue'
-import VisitorView from './components/dash/Visitor.vue'
+import ReposView from './components/dash/Repos.vue'
 
 // Import Install and register helper items
 Vue.use(Router)
@@ -66,8 +66,8 @@ router.map({
       '/server': {
         component: ServerView
       },
-      '/visitors': {
-        component: VisitorView
+      '/repos': {
+        component: ReposView
       }
     }
   },

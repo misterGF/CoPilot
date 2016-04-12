@@ -43,7 +43,7 @@
         return [{
           icon: 'fa-envelope',
           color: 'blue',
-          title: 'Large text',
+          title: 'Write short novel',
           time: moment().endOf('day').fromNow(),
           body: 'Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle quora plaxo ideeli hulu weebly balihoo...',
           buttons: [{
@@ -62,7 +62,7 @@
           color: 'purple',
           title: 'Watch a youTube video',
           time: moment('20130620', 'YYYYMMDD').fromNow(),
-          body: '<div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/tMWkeBIohBs" allowfullscreen="" frameborder="0"></iframe></div>'
+          body: '<div class="embed-responsive embed-responsive-16by9"><iframe width="560" height="315" src="https://www.youtube.com/embed/8aGhZQkoFbQ" frameborder="0" allowfullscreen></iframe></div>'
         }]
       }
     },
