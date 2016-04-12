@@ -55,13 +55,18 @@ router.map({
       },
       '/tasks': {
         component: TasksView,
+        name: 'Tasks',
         description: 'Tasks page in the form of a timeline'
       },
       '/setting': {
-        component: SettingView
+        component: SettingView,
+        name: 'Settings',
+        description: 'User settings page.'
       },
       '/access': {
-        component: AccessView
+        component: AccessView,
+        name: 'Access',
+        description: 'Example of using maps'
       },
       '/server': {
         component: ServerView

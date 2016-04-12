@@ -49,19 +49,21 @@ module.exports = {
       },
       {
         test: /\.json$/,
-        loader: 'json'
+        loader: 'json',
+        exclude: /node_modules/
       },
       {
         test: /\.html$/,
         loader: 'vue-html'
       },
       {
-        test: /\.(png|jpg|gif|svg|woff2?|eot|ttf)(\?.*)?$/,
+        test: /\.(png|jpg|gif|woff2?|eot|ttf)(\?.*)?$/,
         loader: 'url',
         query: {
           limit: 10000,
           name: '[name].[ext]?[hash:7]'
-        }
+        },
+        exclude: /node_modules/
       }
     ]
   },
@@ -70,5 +72,7 @@ module.exports = {
   },
   eslint: {
     formatter: require('eslint-friendly-formatter')
-  }
+  },
+  noParse: ['node_modules','static'],
+  cache: true
 }
