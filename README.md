@@ -29,7 +29,7 @@ Download from Github
 #### Using The Command Line:
 
 ```
-npm install copilot
+git clone https://github.com/misterGF/CoPilot.git
 ```
 
 
