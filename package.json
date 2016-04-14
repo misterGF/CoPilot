@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "node build/dev-server.js",
-    "run": "node build/server.js",
+    "prod": "sudo http-server dist -p 80",
     "build": "node build/build.js",
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
@@ -20,6 +20,7 @@
     "datatables.net-bs": "^1.10.11",
     "faker": "^3.1.0",
     "hideseek": "^0.7.0",
+    "http-server": "^0.9.0",
     "jquery": "^2.2.2",
     "moment": "^2.12.0",
     "vue": "^1.0.18",
