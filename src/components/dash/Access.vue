@@ -58,10 +58,6 @@ export default {
   ready: function () {
     // Add map
     window.jQuery.getScript('/static/js/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js', function (data, textStatus, jqxhr) {
-      console.log(data) // Data returned
-      console.log(textStatus) // Success
-      console.log(jqxhr.status) // 200
-      console.log('Load was performed.')
       window.jQuery.getScript('/static/js/plugins/jvectormap/jquery-jvectormap-world-mill.js', function (data, textStatus, jqxhr) {
         window.jQuery('#world-map-markers').vectorMap({
           map: 'world_mill'
