@@ -16,20 +16,16 @@
       </div>
       <!-- /.box-header -->
       <div class="box-body no-padding">
-        <div class="row">
-          <div class="col-md-9 col-sm-8">
-            <div class="pad">
+        <div class="row no-gutters">
+          <div class="col-md-8">
               <!-- Map will be created here -->
-              <div id="world-map-markers" style="height: 400px;">
-                <div class="jvectormap-container" style="width: 100%; height: 100%; position: relative; overflow: hidden; background-color: transparent;">
-                </div>
-              </div>
+              <div id="world-map-markers"></div>
           </div>
           <!-- /.col -->
-          <div class="col-md-3 col-sm-4">
-            <div class="pad box-pane-right bg-green" style="min-height: 280px">
+          <div class="col-md-4">
+            <div class="pad box-pane-right bg-green" style="min-height: 400px">
               <div v-for="stat in stats" class="description-block margin-bottom">
-                <div class="sparkbar pad" data-color="#fff"><canvas height="30" width="34" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></div>
+                <div class="row" data-color="#fff"><i class="fa fa-bar-chart-o fa-3x"></i></div>
                 <h5 class="description-header">{{stat.header}}</h5>
                 <span class="description-text">{{stat.text}}</span>
               </div>
@@ -41,7 +37,6 @@
       </div>
       <!-- /.box-body -->
     </div>
-
 </template>
 <script>
 export default {
@@ -62,11 +57,33 @@ export default {
   },
   ready: function () {
     // Add map
-    window.jQuery('#world-map-markers').vectorMap()
+    window.jQuery.getScript('/static/js/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js', function (data, textStatus, jqxhr) {
+      console.log(data) // Data returned
+      console.log(textStatus) // Success
+      console.log(jqxhr.status) // 200
+      console.log('Load was performed.')
+      window.jQuery.getScript('/static/js/plugins/jvectormap/jquery-jvectormap-world-mill.js', function (data, textStatus, jqxhr) {
+        window.jQuery('#world-map-markers').vectorMap({
+          map: 'world_mill'
+        })
+      })
+    })
   }
 }
 </script>
 
 <style>
 .fake { color: 'red'}
+#world-map-markers svg {
+  height: 355px;
+}
+.row.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}
+.row.no-gutters > [class^="col-"],
+.row.no-gutters > [class*=" col-"] {
+  padding-right: 0;
+  padding-left: 0;
+}
 </style>
