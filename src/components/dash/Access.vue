@@ -37,6 +37,7 @@
       </div>
       <!-- /.box-body -->
     </div>
+    <link rel="stylesheet" href="/static/js/plugins/jvectormap/jquery-jvectormap-2.0.3.css" >
 </template>
 <script>
 export default {
