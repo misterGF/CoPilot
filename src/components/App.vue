@@ -29,7 +29,7 @@
     methods: {
       callAPI: function (method, url, data) {
         this.callingAPI = true
-        url = this.serverURI + url
+        url = url || this.serverURI // if no url is passed then inheret local server URI
         return this.caller({
           url: url,
           method: method,

@@ -1,9 +1,9 @@
 <template>
   <div class="container container-table">
-      <div class="row vertical-20p">
+      <div class="row vertical-10p">
         <div class="container">
           <img src="/static/img/logo.png" class="center-block logo">
-          <div class="text-center col-sm-6 col-sm-offset-3">
+          <div class="text-center col-md-4 col-sm-offset-4">
             <!-- errors -->
             <div v-if=response class="text-red"><p>{{response  | capitalize }}</p></div>
 
@@ -119,6 +119,9 @@ html, body, .container-table {
 }
 .vertical-20p {
   padding-top: 20%;
+}
+.vertical-10p {
+  padding-top: 10%;
 }
 .logo {
   width: 15em;

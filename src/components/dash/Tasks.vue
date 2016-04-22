@@ -32,9 +32,6 @@
 
   export default {
     name: 'Tasks',
-    data: {
-      githubUrl: 'http://api.github.com/users/mistergf/repos'
-    },
     computed: {
       today: function () {
         return moment().format('MMM Do YY')
@@ -67,18 +64,11 @@
       }
     },
     methods: {
-      callGitHub: function () {
-        this.$parent.callAPI('GET', this.githubUrl).then(function (response) {
-          console.log(response)
-        }, function (response) {
-          console.log('error', response)
-        })
+      ready: function () {
+        // debugger
+        // this.callGitHub()
+        console.log('inside of task')
       }
-    },
-    ready: function () {
-      // debugger
-      // this.callGitHub()
-      console.log('inside of task')
     }
   }
 </script>

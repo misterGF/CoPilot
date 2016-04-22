@@ -61,7 +61,7 @@ router.map({
       '/setting': {
         component: SettingView,
         name: 'Settings',
-        description: 'User settings page.'
+        description: 'User settings page'
       },
       '/access': {
         component: AccessView,
@@ -69,10 +69,14 @@ router.map({
         description: 'Example of using maps'
       },
       '/server': {
-        component: ServerView
+        component: ServerView,
+        name: 'Servers',
+        description: 'List of our servers'
       },
       '/repos': {
-        component: ReposView
+        component: ReposView,
+        name: 'Repository',
+        description: 'List of popular javascript repos'
       }
     }
   },
@@ -101,13 +105,17 @@ router.beforeEach(function (transition) {
 
 // Resource logic
 Vue.use(Resource)
+
 Vue.http.interceptors.push({
   request: function (request) {
+    /*
+      Enable this when you have a backend that you authenticate against
     var headers = request.headers
 
     if (window.location.pathname !== '/login' && !headers.hasOwnProperty('Authorization')) {
       headers.Authorization = this.$store.state.token
     }
+    */
     // console.log(headers)
     return request
   },

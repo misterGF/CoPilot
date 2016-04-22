@@ -254,7 +254,6 @@ module.exports = {
   },
   ready: function () {
     // Page is ready. Let's load our functions!
-
   }
 }
 </script>
