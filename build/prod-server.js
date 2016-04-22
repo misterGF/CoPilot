@@ -1,5 +1,5 @@
 var express = require('express')
-var port = process.env.PORT || 8080 // Might have some issues running it from your local machine. Best to run this on server
+var port = process.env.PORT || 80 // Might have some issues running it from your local machine. Best to run this on server
 var baseConfig = require('./webpack.base.conf')
 
 var app = express(),

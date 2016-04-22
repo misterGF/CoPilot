@@ -57,7 +57,7 @@ export default {
   methods: {
     callGitHub: function () {
       var repo = this
-
+      console.log('repo', repo)
       this.$parent.callAPI('GET', this.githubUrl).then(function (response) {
         console.log(response)
 
@@ -74,7 +74,12 @@ export default {
   },
   ready: function () {
     console.log('Inside ready')
-    this.callGitHub()
+
+    if (this.response === null) {
+      this.callGitHub()
+    } else {
+      console.log('response already there', this.response)
+    }
   }
 
 }
