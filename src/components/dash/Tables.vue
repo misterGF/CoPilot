@@ -67,7 +67,7 @@
 
     <div class="row center-block">
       <h2>Data tables</h2>
-      <div class="col-md-10">
+      <div class="col-md-12">
         <div class="box">
           <div class="box-header">
             <h3 class="box-title">Data Table With Full Features</h3>
