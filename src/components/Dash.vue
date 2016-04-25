@@ -165,7 +165,7 @@
           <li class="header">LOGS</li>
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/access'}"><i class="fa fa-book"></i><span class="page">Access</span></a></li>
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/server'}"><i class="fa fa-hdd-o"></i><span class="page">Server</span></a></li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/repos'}"><i class="fa fa-heart"></i><span class="page">Repos<small class="label pull-right bg-green">AJAX</small></span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/repos'}"><i class="fa fa-heart"></i><span class="page">Repos</span><small class="label pull-right bg-green">AJAX</small></a></li>
 
           <li class="header">PAGES</li>
           <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/login'}"><i class="fa fa-circle-o text-yellow"></i> <span class="page">Login</span></a></li>
