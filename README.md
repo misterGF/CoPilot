@@ -5,7 +5,9 @@ Introduction
 
 **CoPilot** is a fully responsive admin template that is forked from [AdminLTE](https://almsaeedstudio.com). The difference here is that this repo is tailored to use with vue.js. The UI is based on the [Bootstrap 3](https://github.com/twbs/bootstrap) framework. Highly customizable and easy to use. Fits many screen resolutions from small mobile devices to large desktops.
 
-*Demo coming soon*
+
+[Take it for a spin](http://copilot.misterGF.io)
+
 !["CoPilot Screenshot"](http://res.cloudinary.com/gatec21/image/upload/v1459799350/screenshot_t2kpol.png)
 
 In an attempt to keep the project clean I have not included every plugin/feature that AdminLTE offers. You simply need to add the plugin in the /static/js/plugin folder to include them or use npm. I've included the popular ones.
@@ -15,12 +17,13 @@ The structure of the app is scaffolded by [vue-cli](https://github.com/vuejs/vue
 We leverage all the goodies that vue.js offers. Vue-Router for routing. Vue-Resource for AJAX calls. Vuex for state management.
 
 I also recommend that you install vue-devtools for Chrome so that you can easily inspect that state of vue.
+![vue-devtools](http://res.cloudinary.com/gatec21/image/upload/v1461611064/copilot-vuetools_t1mvpg.png)
 
 The data that is being pulled uses faker.js to make it dynamic. This is for demo purposes. Look for demo.* for information that is generated dynamically.
 
 Installation
 ------------
-There are multiple ways to install CoPilot.
+Installing CoPilot is easy.
 
 #### Download:
 
@@ -90,6 +93,10 @@ Contribution are always **welcome and recommended**! Here is how:
 - Clone to your machine ```git clone https://github.com/YOUR_USERNAME/CoPilot.git```
 - Make your changes
 - Create a pull request
+
+TODOS
+-------
+The purpose of this project is to provide a full example of how to leverage Vue. If you find anything that can be Vue-ified please send me a PR.
 
 License
 -------
