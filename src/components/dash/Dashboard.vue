@@ -68,9 +68,10 @@
     <!-- /.row -->
 
     <div class='row'>
-      <div class='col-md-12'>
+      <div class='col-md-12 text-center'>
+        <canvas id="canvas" height="300" width="800"></canvas>
         <div>
-          <canvas id="canvas" height="450" width="600"></canvas>
+
         </div>
       </div>
     </div>
@@ -188,7 +189,7 @@ module.exports = {
       ]
     }
 
-    new Chart(ctx).Line(data, {responsive: true})
+    new Chart(ctx).Line(data, {responsive: false})
   }
 }
 </script>
