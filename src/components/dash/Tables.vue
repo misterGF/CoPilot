@@ -197,8 +197,10 @@ require('datatables.net-bs')
 
 module.exports = {
   name: 'Tables',
-  ready: function () {
-    $('#example1').DataTable()
+  mounted: function () {
+    this.$nextTick(function () {
+      $('#example1').DataTable()
+    })
   }
 }
 </script>
