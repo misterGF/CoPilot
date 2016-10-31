@@ -1,12 +1,9 @@
-Introduction
-============
-
-<img src="http://res.cloudinary.com/gatec21/image/upload/v1459799224/logo_blk_svgsqp.png" alt="CoPilot Logo" style="padding-left: 40%">
+!["CoPilot Banner"](http://res.cloudinary.com/gatec21/image/upload/v1477940670/banner_f70yvk.jpg)
 
 **CoPilot** is a fully responsive admin template that is forked from [AdminLTE](https://almsaeedstudio.com). The difference here is that this repo is tailored to use with vue.js. The UI is based on the [Bootstrap 3](https://github.com/twbs/bootstrap) framework. Highly customizable and easy to use. Fits many screen resolutions from small mobile devices to large desktops.
 
 
-[Take it for a spin](http://copilot.misterGF.io)
+[Take it for a spin](https://copilot.misterGF.io)
 
 !["CoPilot Screenshot"](http://res.cloudinary.com/gatec21/image/upload/v1459799350/screenshot_t2kpol.png)
 
@@ -14,7 +11,7 @@ In an attempt to keep the project clean I have not included every plugin/feature
 
 The structure of the app is scaffolded by [vue-cli](https://github.com/vuejs/vue-cli). Which is a simple CLI tool that setups our environment. CoPilot uses the webpack package. So we get a full-featured Webpack + vue-loader setup with hot reload, linting, testing & css extraction.
 
-We leverage all the goodies that vue.js offers. Vue-Router for routing. Vue-Resource for AJAX calls. Vuex for state management.
+We leverage all the goodies that vue.js offers. Vue-Router for routing. Vue-Resource for AJAX calls. Vuex for state management. **This project is using VueJS 2.0!**. Earlier versions can be found under the [vue 1.0 branch](https://github.com/misterGF/CoPilot/tree/vue1.0_version).
 
 I also recommend that you install vue-devtools for Chrome so that you can easily inspect that state of vue.
 ![vue-devtools](http://res.cloudinary.com/gatec21/image/upload/v1461611064/copilot-vuetools_t1mvpg.png)
@@ -113,9 +110,3 @@ Image Credits
 [Unsplash](https://unsplash.com/)
 
 [Uifaces](http://uifaces.com/)
-
-Donations
----------
-Donations are **greatly appreciated!**
-
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif "CoPilot")](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=W874GLKJ92SGN "Donate")
