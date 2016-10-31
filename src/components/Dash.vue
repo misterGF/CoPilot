@@ -238,6 +238,10 @@ module.exports = {
         email: faker.internet.email(),
         randomCard: faker.helpers.createCard()
       }
+    },
+    year: function () {
+      var y = new Date()
+      return y.getFullYear()
     }
   },
   methods: {
