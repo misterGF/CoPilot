@@ -5,7 +5,7 @@
 
 [Take it for a spin](https://copilot.misterGF.io)
 
-!["CoPilot Screenshot"](http://res.cloudinary.com/gatec21/image/upload/v1459799350/screenshot_t2kpol.png)
+!["CoPilot Screenshot"](http://res.cloudinary.com/gatec21/image/upload/v1477947780/screenshotv2_ft7ayo.png)
 
 In an attempt to keep the project clean I have not included every plugin/feature that AdminLTE offers. You simply need to add the plugin in the /static/js/plugin folder to include them or use npm. I've included the popular ones.
 
