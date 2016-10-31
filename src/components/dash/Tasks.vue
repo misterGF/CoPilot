@@ -10,15 +10,14 @@
         <!-- timeline item -->
         <li v-for="line in timeline">
           <!-- timeline icon -->
-          <i class="fa {{line.icon}} bg-{{line.color}}"></i>
+          <i v-bind:class="'fa ' + line.icon + ' bg-' + line.color"></i>
           <div class="timeline-item">
             <span class="time"><i class="fa fa-clock-o"></i>&nbsp;{{line.time}}</span>
             <h3 class="timeline-header">{{line.title}}</h3>
-            <div class="timeline-body" v-if="line.body">
-              {{{line.body}}}
+            <div class="timeline-body" v-if="line.body" v-html="line.body">
             </div>
             <div class="timeline-footer" v-if="btn">
-              <a class="btn btn-{{btn.type}} btn-xs" v-for="btn in line.buttons">{{btn.message}}</a>
+              <a v-bind:class="'btn btn-' + btn.type + ' btn-xs'" v-for="btn in line.buttons">{{btn.message}}</a>
             </div>
           </div>
         </li>
@@ -64,7 +63,7 @@
       }
     },
     methods: {
-      ready: function () {
+      mounted: function () {
         // debugger
         // this.callGitHub()
         console.log('inside of task')

@@ -5,7 +5,7 @@
           <img src="/static/img/logo.png" class="center-block logo">
           <div class="text-center col-md-4 col-sm-offset-4">
             <!-- errors -->
-            <div v-if=response class="text-red"><p>{{response  | capitalize }}</p></div>
+            <div v-if=response class="text-red"><p>{{response}}</p></div>
 
             <!-- login form -->
             <form class="ui form loginForm"  @submit.prevent="checkCreds">
@@ -19,7 +19,7 @@
                 <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                 <input class="form-control" name="password" placeholder="Password" type="password" v-model="password">
               </div>
-              <button type="submit" class="btn btn-primary btn-lg {{loading}}">Submit</button>
+              <button type="submit" v-bind:class="'btn btn-primary btn-lg ' + loading">Submit</button>
             </form>
           </div>
         </div>
@@ -78,7 +78,7 @@ module.exports = {
                 window.localStorage.setItem('token', token)
               }
 
-              this.$router.go(data.redirect)
+              this.$router.push(data.redirect)
             }
           }
         } else {

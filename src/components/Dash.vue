@@ -14,7 +14,7 @@
       <!-- Header Navbar -->
       <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
-        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+        <a href="javascript:;" class="sidebar-toggle" data-toggle="offcanvas" role="button">
           <span class="sr-only">Toggle navigation</span>
         </a>
         <!-- Navbar Right Menu -->
@@ -22,7 +22,7 @@
           <ul class="nav navbar-nav">
             <!-- Messages-->
             <li class="dropdown messages-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-envelope-o"></i>
                 <span class="label label-success">{{ state.userInfo.messages | count }}</span>
               </a>
@@ -32,7 +32,7 @@
                   <!-- inner menu: contains the messages -->
                   <ul class="menu">
                     <li><!-- start message -->
-                      <a href="#">
+                      <a href="javascript:;">
                         <!-- Message title and timestamp -->
                         <h4>
                           Support Team
@@ -46,14 +46,14 @@
                   </ul>
                   <!-- /.menu -->
                 </li>
-                <li class="footer"><a href="#">See All Messages</a></li>
+                <li class="footer"><a href="javascript:;">See All Messages</a></li>
               </ul>
             </li>
             <!-- /.messages-menu -->
 
             <!-- Notifications Menu -->
             <li class="dropdown notifications-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bell-o"></i>
                 <span class="label label-warning">{{ state.userInfo.notifications | count }}</span>
               </a>
@@ -63,20 +63,20 @@
                   <!-- Inner Menu: contains the notifications -->
                   <ul class="menu">
                     <li><!-- start notification -->
-                      <a href="#">
+                      <a href="javascript:;">
                         <i class="fa fa-users text-aqua"></i> 5 new members joined today
                       </a>
                     </li>
                     <!-- end notification -->
                   </ul>
                 </li>
-                <li class="footer"><a href="#">View all</a></li>
+                <li class="footer"><a href="javascript:;">View all</a></li>
               </ul>
             </li>
 
             <!-- Tasks Menu -->
             <li class="dropdown tasks-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-flag-o"></i>
                 <span class="label label-danger">{{ state.userInfo.tasks | count }} </span>
               </a>
@@ -86,7 +86,7 @@
                   <!-- Inner menu: contains the tasks -->
                   <ul class="menu">
                     <li><!-- Task item -->
-                      <a href="#">
+                      <a href="javascript:;">
                         <!-- Task title and progress text -->
                         <h3>
                           Design some buttons
@@ -105,14 +105,14 @@
                   </ul>
                 </li>
                 <li class="footer">
-                  <a href="#">View all tasks</a>
+                  <a href="javascript:;">View all tasks</a>
                 </li>
               </ul>
             </li>
 
             <!-- User Account Menu -->
             <li class="dropdown user user-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
                 <img v-bind:src=demo.avatar class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
@@ -136,7 +136,7 @@
           </div>
           <div class="pull-left info">
             <div><p class="white">{{ demo.displayName }}</p></div>
-            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            <a href="javascript:;"><i class="fa fa-circle text-success"></i> Online</a>
           </div>
         </div>
 
@@ -155,21 +155,21 @@
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
           <li class="header">TOOLS</li>
-          <li class="active pageLink" v-on:click="toggleMenu"><a v-link="{path: '/'}"><i class="fa fa-desktop"></i><span class="page">Dashboard</span></a></li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/tables'}"><i class="fa fa-table"></i><span class="page">Tables</span></a></li>
+          <li class="active pageLink" v-on:click="toggleMenu"><router-link to="/"><i class="fa fa-desktop"></i><span class="page">Dashboard</span></router-link></li>
+          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/tables"><i class="fa fa-table"></i><span class="page">Tables</span></router-link></li>
 
           <li class="header">ME</li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/tasks'}"><i class="fa fa-tasks"></i><span class="page">Tasks</span></a></li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/setting'}"><i class="fa fa-cog"></i><span class="page">Settings</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/tasks"><i class="fa fa-tasks"></i><span class="page">Tasks</span></router-link></li>
+          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/setting"><i class="fa fa-cog"></i><span class="page">Settings</span></router-link></li>
 
           <li class="header">LOGS</li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/access'}"><i class="fa fa-book"></i><span class="page">Access</span></a></li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/server'}"><i class="fa fa-hdd-o"></i><span class="page">Server</span></a></li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/repos'}"><i class="fa fa-heart"></i><span class="page">Repos</span><small class="label pull-right bg-green">AJAX</small></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/access"><i class="fa fa-book"></i><span class="page">Access</span></router-link></li>
+          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/server"><i class="fa fa-hdd-o"></i><span class="page">Server</span></router-link></li>
+          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/repos"><i class="fa fa-heart"></i><span class="page">Repos</span><small class="label pull-right bg-green">AJAX</small></router-link></li>
 
           <li class="header">PAGES</li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/login'}"><i class="fa fa-circle-o text-yellow"></i> <span class="page">Login</span></a></li>
-          <li class="pageLink" v-on:click="toggleMenu"><a v-link="{path: '/404'}"><i class="fa fa-circle-o text-red"></i> <span class="page">404</span></a></li>
+          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/login"><i class="fa fa-circle-o text-yellow"></i> <span class="page">Login</span></router-link></li>
+          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/404"><i class="fa fa-circle-o text-red"></i> <span class="page">404</span></router-link></li>
         </ul>
         <!-- /.sidebar-menu -->
       </section>
@@ -181,12 +181,12 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          {{$route.name | uppercase }}
-          <small>{{ $route.description }}</small>
+          {{$route.name.toUpperCase() }}
+          <small>{{ $route.meta.description }}</small>
         </h1>
         <ol class="breadcrumb">
-          <li><a href="#"><i class="fa fa-home"></i>Home</a></li>
-          <li class="active">{{$route.name | uppercase }}</li>
+          <li><a href="javascript:;"><i class="fa fa-home"></i>Home</a></li>
+          <li class="active">{{$route.name.toUpperCase() }}</li>
         </ol>
       </section>
 
@@ -196,7 +196,7 @@
 
     <!-- Main Footer -->
     <footer class="main-footer">
-      <strong>Copyright &copy; {{year}} <a href="#">CoPilot</a>.</strong> All rights reserved.
+      <strong>Copyright &copy; {{year}} <a href="javascript:;">CoPilot</a>.</strong> All rights reserved.
     </footer>
   </div>
   <!-- ./wrapper -->
@@ -252,7 +252,7 @@ module.exports = {
       event.toElement.parentElement.className = 'pageLink active'
     }
   },
-  ready: function () {
+  mounted: function () {
     // Page is ready. Let's load our functions!
   }
 }

@@ -1,22 +1,13 @@
 <template>
-  <router-view></router-view>
-  <div id="app"></div>
+  <div>
+    <router-view></router-view>
+    <div id="app"></div>
+  </div>
 </template>
 
 <script>
-  import store from './../store'
-
-  // Check local storage to handle refreshes
-  if (window.localStorage) {
-    if (store.state.user !== window.localStorage.getItem('user')) {
-      store.dispatch('SET_USER', JSON.parse(window.localStorage.getItem('user')))
-      store.dispatch('SET_TOKEN', window.localStorage.getItem('token'))
-    }
-  }
-
   export default {
     name: 'App',
-    store: store,
     data: function () {
       return {
         section: 'Head',
@@ -45,7 +36,7 @@
           window.localStorage.setItem('token', null)
         }
 
-        this.$router.go('/login')
+        this.$router.push('/login')
       }
     }
   }
