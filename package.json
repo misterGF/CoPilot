@@ -12,7 +12,7 @@
     "unit": "karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
-    "deploy": "pubstorm publish"
+    "deploy": "storm publish"
   },
   "dependencies": {
     "babel-runtime": "^5.8.0",
