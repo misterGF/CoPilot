@@ -7,3 +7,4 @@ test/unit/coverage
 test/e2e/reports
 .tern-project
 pubstorm.json
+build_old
