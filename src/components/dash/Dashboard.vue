@@ -72,14 +72,14 @@
         <div class="box-header with-border">
           <h3 class="box-title"></h3>
           <div class="box-body">
-            <div class="col-md-6 col-xs-12"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+            <div class="col-sm-6 col-xs-12">
               <p class="text-center">
                 <strong>Web Traffic Overview</strong>
               </p>
               <canvas id="trafficBar" ></canvas>
             </div>
             <hr class="visible-xs">
-            <div class="col-md-6 col-xs-12"><iframe class="chartjs-hidden-iframe" tabindex="-1" style="width: 100%; display: block; border: 0px; height: 0px; margin: 0px; position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px;"></iframe>
+            <div class="col-sm-6 col-xs-12">
               <p class="text-center">
                 <strong>Language Overview</strong>
               </p>
@@ -219,7 +219,7 @@ module.exports = {
         },
         options: {
           responsive: true,
-          maintainAspectRatio: false,
+          maintainAspectRatio: true,
           legend: {
             position: 'bottom',
             display: true
@@ -248,7 +248,7 @@ module.exports = {
         },
         options: {
           responsive: true,
-          maintainAspectRatio: false,
+          maintainAspectRatio: true,
           legend: {
             position: 'bottom',
             display: true
