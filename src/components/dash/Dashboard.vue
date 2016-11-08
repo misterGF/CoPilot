@@ -94,7 +94,7 @@
 
     <!-- Main row -->
     <div class='row'>
-      <div class='col-md-3 col-sm-6'>
+      <div class='col-md-3 col-sm-6 col-xs-12'>
         <div class='info-box bg-yellow'>
           <span class='info-box-icon'><i class='ion ion-ios-pricetag-outline'></i></span>
 
@@ -112,7 +112,7 @@
           <!-- /.info-box-content -->
         </div>
       </div>
-      <div class='col-md-3 col-sm-6'>
+      <div class='col-md-3 col-sm-6 col-xs-12'>
         <div class='info-box bg-green'>
           <span class='info-box-icon'><i class='ion ion-ios-heart-outline'></i></span>
 
@@ -130,7 +130,7 @@
           <!-- /.info-box-content -->
         </div>
       </div>
-      <div class='col-md-3 col-sm-6'>
+      <div class='col-md-3 col-sm-6 col-xs-12'>
         <div class='info-box bg-red'>
           <span class='info-box-icon'><i class='ion ion-ios-cloud-download-outline'></i></span>
 
@@ -148,7 +148,7 @@
           <!-- /.info-box-content -->
         </div>
       </div>
-      <div class='col-md-3 col-sm-6'>
+      <div class='col-md-3 col-sm-6 col-xs-12'>
         <div class='info-box bg-aqua'>
           <span class='info-box-icon'><i class='ion-ios-chatbubble-outline'></i></span>
 
