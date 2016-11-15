@@ -96,6 +96,13 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <tr class="even" role="row">
+                        <td class="sorting_1">Blink</td>
+                        <td>Iridium  54.0</td>
+                        <td>GNU/Linux</td>
+                        <td>54</td>
+                        <td>A</td>
+                      </tr>
                       <tr class="odd" role="row">
                         <td class="sorting_1">Gecko</td>
                         <td>Firefox 1.0</td>
