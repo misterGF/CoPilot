@@ -87,7 +87,7 @@
             </div>
           </div>
         </div>
-        <small class="space"><b>Pro Tip</b> Don't forget to start us on github!</small>
+        <small class="space"><b>Pro Tip</b> Don't forget to star us on github!</small>
       </div>
     </div>
     <!-- /.row -->
