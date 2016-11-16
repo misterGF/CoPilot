@@ -16,8 +16,8 @@
             <h3 class="timeline-header">{{line.title}}</h3>
             <div class="timeline-body" v-if="line.body" v-html="line.body">
             </div>
-            <div class="timeline-footer" v-if="btn">
-              <a v-bind:class="'btn btn-' + btn.type + ' btn-xs'" v-for="btn in line.buttons">{{btn.message}}</a>
+            <div class="timeline-footer" v-if="line.buttons">
+              <a v-for="btn in line.buttons" v-bind:class="'btn btn-' + btn.type + ' btn-xs'" >{{btn.message}}</a>
             </div>
           </div>
         </li>
