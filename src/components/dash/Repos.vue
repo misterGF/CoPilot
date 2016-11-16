@@ -8,9 +8,8 @@
         <div v-if="error">
           Found an error
         </div>
-
         <div v-else>
-          <div class="col-md-4" v-if="response" v-for="repo in response.data.items" >
+          <div class="col-md-4" v-if="response" v-for="repo in response" >
             <div class="box box-widget widget-user">
               <div class="widget-user-header bg-aqua-active text-center">
                 <h3 class="widget-user-username center-text">{{repo.name }}</h3>
@@ -59,31 +58,26 @@ export default {
   methods: {
     callGitHub: function () {
       var repo = this
-      console.log('repo', repo)
-      this.$parent.callAPI('GET', this.githubUrl).then(function (response) {
-        console.log(response)
 
-        repo.response = response
+      this.$parent.callAPI('GET', this.githubUrl).then(function (response) {
+        console.log('GitHub Response:', response)
 
         if (response.status !== 200) {
-          this.error = response.statusText
+          repo.error = response.statusText
+          return
         }
+
+        repo.response = response.data.items
       }, function (response) {
+        // Request failed.
         console.log('error', response)
-        this.error = response
+        repo.error = response.statusText
       })
     }
   },
   mounted: function () {
-    console.log('Inside ready')
-
-    if (this.response === null) {
-      this.callGitHub()
-    } else {
-      console.log('response already there', this.response)
-    }
+    this.callGitHub()
   }
-
 }
 </script>
 
