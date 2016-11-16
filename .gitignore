@@ -2,10 +2,7 @@
 node_modules/
 dist/
 npm-debug.log
-selenium-debug.log
 test/unit/coverage
 test/e2e/reports
-.tern-project
-pubstorm.json
-build_old
+selenium-debug.log
 .netlify
