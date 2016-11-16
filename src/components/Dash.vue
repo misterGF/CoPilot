@@ -27,8 +27,8 @@
                 <span class="label label-success">{{ state.userInfo.messages | count }}</span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have {{ state.userInfo.messages | count }} messages</li>
-                <li>
+                <li class="header">You have {{ state.userInfo.messages | count }} message(s)</li>
+                <li v-if="state.userInfo.messages.length > 0">
                   <!-- inner menu: contains the messages -->
                   <ul class="menu">
                     <li><!-- start message -->
@@ -39,14 +39,14 @@
                           <small><i class="fa fa-clock-o"></i> 5 mins</small>
                         </h4>
                         <!-- The message -->
-                        <p>Why not buy a new awesome theme?</p>
+                        <p>Why not consider this a test message?</p>
                       </a>
                     </li>
                     <!-- end message -->
                   </ul>
                   <!-- /.menu -->
                 </li>
-                <li class="footer"><a href="javascript:;">See All Messages</a></li>
+                <li class="footer" v-if="state.userInfo.messages.length > 0"><a href="javascript:;">See All Messages</a></li>
               </ul>
             </li>
             <!-- /.messages-menu -->
@@ -58,8 +58,8 @@
                 <span class="label label-warning">{{ state.userInfo.notifications | count }}</span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have {{ state.userInfo.notifications | count }} notifications</li>
-                <li>
+                <li class="header">You have {{ state.userInfo.notifications | count }} notification(s)</li>
+                <li v-if="state.userInfo.notifications.length > 0">
                   <!-- Inner Menu: contains the notifications -->
                   <ul class="menu">
                     <li><!-- start notification -->
@@ -70,7 +70,7 @@
                     <!-- end notification -->
                   </ul>
                 </li>
-                <li class="footer"><a href="javascript:;">View all</a></li>
+                <li class="footer" v-if="state.userInfo.notifications.length > 0"><a href="javascript:;">View all</a></li>
               </ul>
             </li>
 
@@ -81,8 +81,8 @@
                 <span class="label label-danger">{{ state.userInfo.tasks | count }} </span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have {{ state.userInfo.tasks | count }}  tasks</li>
-                <li>
+                <li class="header">You have {{ state.userInfo.tasks | count }}  task(s)</li>
+                <li v-if="state.userInfo.tasks.length > 0">
                   <!-- Inner menu: contains the tasks -->
                   <ul class="menu">
                     <li><!-- Task item -->
@@ -104,7 +104,7 @@
                     <!-- end task item -->
                   </ul>
                 </li>
-                <li class="footer">
+                <li class="footer" v-if="state.userInfo.tasks.length > 0">
                   <a href="javascript:;">View all tasks</a>
                 </li>
               </ul>
