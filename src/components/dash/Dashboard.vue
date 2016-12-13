@@ -78,7 +78,7 @@
               </p>
               <canvas id="trafficBar" ></canvas>
             </div>
-            <hr class="visible-xs">
+            <hr class="visible-xs-block">
             <div class="col-sm-6 col-xs-12">
               <p class="text-center">
                 <strong>Language Overview</strong>
@@ -193,6 +193,9 @@ module.exports = {
     },
     personalNumbers: function () {
       return this.generateRandomNumbers(12, 1000000, 10000)
+    },
+    isMobile: function () {
+      return (window.innerWidth <= 800 && window.innerHeight <= 600)
     }
   },
   mounted: function () {
@@ -219,7 +222,7 @@ module.exports = {
         },
         options: {
           responsive: true,
-          maintainAspectRatio: true,
+          maintainAspectRatio: !this.isMobile,
           legend: {
             position: 'bottom',
             display: true
@@ -248,7 +251,7 @@ module.exports = {
         },
         options: {
           responsive: true,
-          maintainAspectRatio: true,
+          maintainAspectRatio: !this.isMobile,
           legend: {
             position: 'bottom',
             display: true

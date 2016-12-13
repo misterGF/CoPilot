@@ -266,4 +266,10 @@ module.exports = {
 .user-panel {
   height: 4em;
 }
+hr.visible-xs-block {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.17);
+  height: 1px;
+  border-color: transparent;
+}
 </style>
