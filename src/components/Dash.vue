@@ -246,7 +246,7 @@ module.exports = {
   },
   methods: {
     changeloading: function () {
-      this.store.dispatch('TOGGLE_SEARCHING')
+      this.store.commit('TOGGLE_SEARCHING')
     },
     toggleMenu: function (event) {
       // remove active from li
