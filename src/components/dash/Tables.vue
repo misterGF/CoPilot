@@ -8,7 +8,7 @@
             <h3 class="box-title">Striped Full Width Table</h3>
           </div>
           <!-- /.box-header -->
-          <div class="box-body no-padding">
+          <div class="box-body no-padding table-responsive">
             <table class="table table-striped">
               <tbody>
                 <tr>
@@ -84,7 +84,7 @@
               </div>
 
               <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-12 table-responsive">
                   <table aria-describedby="example1_info" role="grid" id="example1" class="table table-bordered table-striped dataTable">
                     <thead>
                       <tr role="row">
