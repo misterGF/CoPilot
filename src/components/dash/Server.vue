@@ -24,7 +24,7 @@
 
   export default {
     name: 'Servers',
-    data: function () {
+    data () {
       return {
         servers
       }

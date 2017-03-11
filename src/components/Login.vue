@@ -30,7 +30,7 @@
 <script>
 module.exports = {
   name: 'Login',
-  data: function (router) {
+  data (router) {
     return {
       section: 'Login',
       loading: '',
@@ -40,7 +40,7 @@ module.exports = {
     }
   },
   methods: {
-    checkCreds: function () {
+    checkCreds () {
       //  Change submit button
       var self = this
       var store = this.$store
@@ -94,10 +94,10 @@ module.exports = {
         self.toggleLoading()
       })
     },
-    toggleLoading: function () {
+    toggleLoading () {
       this.loading = (this.loading === '') ? 'loading' : ''
     },
-    resetResponse: function () {
+    resetResponse () {
       this.response = ''
     }
   }

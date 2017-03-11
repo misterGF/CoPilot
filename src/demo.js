@@ -32,6 +32,17 @@ export const servers = [{
   description: 'Backup server'
 }]
 
+export const stats = [{
+  header: '8390',
+  text: 'Visitors'
+}, {
+  header: '30%',
+  text: 'Referrals'
+}, {
+  header: '70%',
+  text: 'Organic'
+}]
+
 export const timeline = [{
   icon: 'fa-envelope',
   color: 'blue',

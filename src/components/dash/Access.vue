@@ -45,27 +45,20 @@
   </section>
 </template>
 <script>
+import {stats} from '../../demo'
+
 export default {
   name: 'Access',
-  data: function () {
+  data () {
     return {
-      stats: [{
-        header: '8390',
-        text: 'Visitors'
-      }, {
-        header: '30%',
-        text: 'Referrals'
-      }, {
-        header: '70%',
-        text: 'Organic'
-      }]
+      stats
     }
   },
-  mounted: function () {
-    this.$nextTick(function () {
+  mounted () {
+    this.$nextTick(() => {
       // Add map
-      window.jQuery.getScript('/static/js/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js', function (data, textStatus, jqxhr) {
-        window.jQuery.getScript('/static/js/plugins/jvectormap/jquery-jvectormap-world-mill.js', function (data, textStatus, jqxhr) {
+      window.jQuery.getScript('/static/js/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js', (data, textStatus, jqxhr) => {
+        window.jQuery.getScript('/static/js/plugins/jvectormap/jquery-jvectormap-world-mill.js', (data, textStatus, jqxhr) => {
           window.jQuery('#world-map-markers').vectorMap({
             map: 'world_mill'
           })

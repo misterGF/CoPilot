@@ -33,15 +33,15 @@
   export default {
     name: 'Tasks',
     computed: {
-      today: function () {
+      today () {
         return moment().format('MMM Do YY')
       },
-      timeline: function () {
+      timeline () {
         return timeline
       }
     },
     methods: {
-      mounted: function () {
+      mounted () {
         // debugger
         // this.callGitHub()
         console.log('inside of task')

@@ -46,9 +46,11 @@
   </div>
 </template>
 <script>
+import api from '../../api'
+
 export default {
   name: 'Repository',
-  data: function () {
+  data () {
     return {
       githubUrl: 'https://api.github.com/search/repositories?q=language%3Ajavascript&sort=stars',
       response: null,
@@ -56,26 +58,24 @@ export default {
     }
   },
   methods: {
-    callGitHub: function () {
-      var repo = this
-
-      this.$parent.callAPI('GET', this.githubUrl).then(function (response) {
+    callGitHub () {
+      api.request('GET', this.githubUrl).then(response => {
         console.log('GitHub Response:', response)
 
         if (response.status !== 200) {
-          repo.error = response.statusText
+          this.error = response.statusText
           return
         }
 
-        repo.response = response.data.items
-      }, function (response) {
+        this.response = response.data.items
+      }, response => {
         // Request failed.
         console.log('error', response)
-        repo.error = response.statusText
+        this.error = response.statusText
       })
     }
   },
-  mounted: function () {
+  mounted () {
     this.callGitHub()
   }
 }

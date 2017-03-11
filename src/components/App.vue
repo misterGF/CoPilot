@@ -8,13 +8,13 @@
 <script>
   export default {
     name: 'App',
-    data: function () {
+    data () {
       return {
         section: 'Head'
       }
     },
     methods: {
-      logout: function () {
+      logout () {
         this.$store.commit('SET_USER', null)
         this.$store.commit('SET_TOKEN', null)
 

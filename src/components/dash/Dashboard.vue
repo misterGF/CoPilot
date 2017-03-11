@@ -176,9 +176,9 @@
 import Chart from 'chart.js'
 
 module.exports = {
-  data: function () {
+  data () {
     return {
-      generateRandomNumbers: function (numbers, max, min) {
+      generateRandomNumbers (numbers, max, min) {
         var a = []
         for (var i = 0; i < numbers; i++) {
           a.push(Math.floor(Math.random() * (max - min + 1)) + max)
@@ -188,18 +188,18 @@ module.exports = {
     }
   },
   computed: {
-    coPilotNumbers: function () {
+    coPilotNumbers () {
       return this.generateRandomNumbers(12, 1000000, 10000)
     },
-    personalNumbers: function () {
+    personalNumbers () {
       return this.generateRandomNumbers(12, 1000000, 10000)
     },
-    isMobile: function () {
+    isMobile () {
       return (window.innerWidth <= 800 && window.innerHeight <= 600)
     }
   },
-  mounted: function () {
-    this.$nextTick(function () {
+  mounted () {
+    this.$nextTick(() => {
       var ctx = document.getElementById('trafficBar').getContext('2d')
       var config = {
         type: 'line',

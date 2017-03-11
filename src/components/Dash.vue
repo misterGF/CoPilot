@@ -227,13 +227,13 @@ module.exports = {
     }
   },
   computed: {
-    store: function () {
+    store () {
       return this.$parent.$store
     },
-    state: function () {
+    state () {
       return this.store.state
     },
-    demo: function () {
+    demo () {
       return {
         displayName: faker.name.findName(),
         avatar: faker.image.avatar(),
@@ -241,16 +241,16 @@ module.exports = {
         randomCard: faker.helpers.createCard()
       }
     },
-    year: function () {
+    year () {
       var y = new Date()
       return y.getFullYear()
     }
   },
   methods: {
-    changeloading: function () {
+    changeloading () {
       this.store.commit('TOGGLE_SEARCHING')
     },
-    toggleMenu: function (event) {
+    toggleMenu (event) {
       // remove active from li
       window.$('li.pageLink').removeClass('active')
 
@@ -258,7 +258,7 @@ module.exports = {
       event.toElement.parentElement.className = 'pageLink active'
     }
   },
-  mounted: function () {
+  mounted () {
     // Page is ready. Let's load our functions!
   }
 }

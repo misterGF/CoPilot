@@ -98,18 +98,16 @@ import datepicker from 'vue-date-picker'
 
 export default {
   name: 'Settings',
+  components: { datepicker },
   computed: {
-    datetime: function () {
+    datetime () {
       return new Date()
     }
   },
-  components: { datepicker },
   methods: {
-    clearInput: function (vueModel) {
+    clearInput (vueModel) {
       vueModel = ''
     }
-  },
-  mounted: function () {
   }
 }
 </script>
