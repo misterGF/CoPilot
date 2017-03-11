@@ -1,6 +1,5 @@
 // Import System requirements
 import Vue from 'vue'
-import Resource from 'vue-resource'
 import VueRouter from 'vue-router'
 
 import routes from './routes'
@@ -18,24 +17,7 @@ Vue.filter('domain', domain)
 Vue.filter('prettyDate', prettyDate)
 Vue.filter('pluralize', pluralize)
 
-// Resource logic
-Vue.use(Resource)
 Vue.use(VueRouter)
-
-Vue.http.interceptors.push((request, next) => {
-  /*
-    Enable this when you have a backend that you authenticate against
-  var headers = request.headers
-
-  if (window.location.pathname !== '/login' && !headers.hasOwnProperty('Authorization')) {
-    headers.Authorization = this.$store.state.token
-  }
-  */
-  // console.log(headers)
-
-  // continue to next interceptor without modifying the response
-  next()
-})
 
 // Routing logic
 var router = new VueRouter({

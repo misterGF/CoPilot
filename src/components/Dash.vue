@@ -233,9 +233,6 @@ module.exports = {
     state: function () {
       return this.store.state
     },
-    callAPI: function () {
-      return this.$parent.callAPI
-    },
     demo: function () {
       return {
         displayName: faker.name.findName(),
