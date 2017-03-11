@@ -222,7 +222,9 @@ module.exports = {
 
 @import url('/static/js/plugins/datatables/dataTables.bootstrap.css');
 
-table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after {
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after {
   font-family: 'FontAwesome';
 }
 
