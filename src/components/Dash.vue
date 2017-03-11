@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div :class="['wrapper', sticky && 'sticky']">
     <header class="main-header">
       <a href="/" class="logo">
         <!-- mini logo for sidebar mini 40x50 pixels -->
@@ -204,6 +204,7 @@
 
 <script>
 import faker from 'faker'
+import config from '../config'
 require('hideseek')
 
 module.exports = {
@@ -211,6 +212,7 @@ module.exports = {
   data: function () {
     return {
       section: 'Dash',
+      sticky: config.stickyNav,
       me: '',
       error: '',
       api: {
@@ -262,7 +264,17 @@ module.exports = {
 }
 </script>
 
-<style>
+<style lang="scss">
+.wrapper.sticky {
+  .main-header {
+
+  }
+
+  .main-sidebar {
+    
+  }
+}
+
 .user-panel {
   height: 4em;
 }

@@ -10,7 +10,6 @@ import store from './store'
 import { domain, count, prettyDate, pluralize } from './filters'
 
 // Import Views - Top level
-
 import AppView from './components/App.vue'
 
 // Import Install and register helper items
@@ -21,7 +20,6 @@ Vue.filter('pluralize', pluralize)
 
 // Resource logic
 Vue.use(Resource)
-
 Vue.use(VueRouter)
 
 Vue.http.interceptors.push((request, next) => {
