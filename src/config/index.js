@@ -1,3 +1,4 @@
 export default {
-  stickyNav: true
+  stickyNav: true,
+  hideLogoOnMobile: true
 }

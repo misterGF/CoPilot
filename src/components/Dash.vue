@@ -1,5 +1,5 @@
 <template>
-  <div :class="['wrapper', sticky && 'sticky']">
+  <div :class="['wrapper', classes]">
     <header class="main-header">
       <a href="/" class="logo">
         <!-- mini logo for sidebar mini 40x50 pixels -->
@@ -212,7 +212,10 @@ module.exports = {
   data: function () {
     return {
       section: 'Dash',
-      sticky: config.stickyNav,
+      classes: {
+        sticky: config.stickyNav,
+        hide_logo: config.hideLogoOnMobile
+      },
       me: '',
       error: '',
       api: {
@@ -278,6 +281,14 @@ module.exports = {
   .main-sidebar {
     position: fixed;
     height: 100vh;
+  }
+}
+
+.wrapper.hide_logo {
+  @media (max-width: 767px) {
+    .main-header .logo {
+      display: none;
+    }
   }
 }
 
