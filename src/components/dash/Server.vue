@@ -20,41 +20,13 @@
   </div>
 </template>
 <script>
+  import {servers} from '../../demo'
+
   export default {
     name: 'Servers',
     data: function () {
       return {
-        servers: [{
-          name: 'www01',
-          status: 'success',
-          icon: 'globe',
-          description: 'Web server that runs our sites'
-        }, {
-          name: 'sql01',
-          status: 'danger',
-          icon: 'database',
-          description: 'mySQL server used for reporting'
-        }, {
-          name: 'mongoDB01',
-          status: 'info',
-          icon: 'file-code-o',
-          description: 'Main DB server'
-        }, {
-          name: 'ldap01',
-          status: 'success',
-          icon: 'key',
-          description: 'Authentication server'
-        }, {
-          name: 'mgmt01',
-          status: 'success',
-          icon: 'home',
-          description: 'Management server with all tools'
-        }, {
-          name: 'bkup01',
-          status: 'warning',
-          icon: 'backward',
-          description: 'Backup server'
-        }]
+        servers
       }
     }
   }

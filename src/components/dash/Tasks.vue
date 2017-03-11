@@ -28,6 +28,7 @@
 </template>
 <script>
   import moment from 'moment'
+  import {timeline} from '../../demo'
 
   export default {
     name: 'Tasks',
@@ -36,30 +37,7 @@
         return moment().format('MMM Do YY')
       },
       timeline: function () {
-        return [{
-          icon: 'fa-envelope',
-          color: 'blue',
-          title: 'Write short novel',
-          time: moment().endOf('day').fromNow(),
-          body: 'Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle quora plaxo ideeli hulu weebly balihoo...',
-          buttons: [{
-            type: 'primary',
-            message: 'Read more'
-          }]
-        },
-        {
-          icon: 'fa-user',
-          color: 'yellow',
-          title: 'Sarah Young accepted your friend request',
-          time: moment('20150620', 'MMM Do YY').fromNow()
-        },
-        {
-          icon: 'fa-camera',
-          color: 'purple',
-          title: 'Watch a youTube video',
-          time: moment('20130620', 'YYYYMMDD').fromNow(),
-          body: '<div class="embed-responsive embed-responsive-16by9"><iframe width="560" height="315" src="https://www.youtube.com/embed/8aGhZQkoFbQ" frameborder="0" allowfullscreen></iframe></div>'
-        }]
+        return timeline
       }
     },
     methods: {
