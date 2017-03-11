@@ -267,17 +267,24 @@ module.exports = {
 <style lang="scss">
 .wrapper.sticky {
   .main-header {
+    position: fixed;
+    width: 100%;
+  }
 
+  .content-wrapper {
+    padding-top: 50px;
   }
 
   .main-sidebar {
-    
+    position: fixed;
+    height: 100vh;
   }
 }
 
 .user-panel {
   height: 4em;
 }
+
 hr.visible-xs-block {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.17);
