@@ -167,7 +167,7 @@ module.exports = {
     return {
       section: 'Dash',
       classes: {
-        sticky: config.stickyNav,
+        fixed_layout: config.fixedLayout,
         hide_logo: config.hideLogoOnMobile
       },
       me: '',
@@ -212,7 +212,7 @@ module.exports = {
 </script>
 
 <style lang="scss">
-.wrapper.sticky {
+.wrapper.fixed_layout {
   .main-header {
     position: fixed;
     width: 100%;
