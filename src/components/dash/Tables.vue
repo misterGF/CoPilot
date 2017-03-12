@@ -197,15 +197,16 @@
 
 <script>
 import $ from 'jquery'
-
 // Require needed datatables modules
-require('datatables.net')
-require('datatables.net-bs')
+import 'datatables.net'
+import 'datatables.net-bs'
 
-module.exports = {
+export default {
   name: 'Tables',
   mounted () {
-    this.$nextTick(() => $('#example1').DataTable())
+    this.$nextTick(() => {
+      $('#example1').DataTable()
+    })
   }
 }
 </script>
