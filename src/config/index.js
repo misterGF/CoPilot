@@ -1,4 +1,4 @@
 export default {
-  fixedLayout: true,
-  hideLogoOnMobile: true
+  fixedLayout: false,
+  hideLogoOnMobile: false
 }
