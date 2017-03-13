@@ -7,7 +7,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-
+          <img :src="pictureUrl" />
         </div>
         <div class="pull-left info">
           <div><p class="white">{{ displayName }}</p></div>
@@ -39,7 +39,12 @@ import SidebarMenu from './SidebarMenu'
 
 export default {
   name: 'Sidebar',
-  props: ['displayName'],
+  props: ['displayName', 'pictureUrl'],
   components: { SidebarMenu }
 }
 </script>
+<style>
+  .user-panel .image img {
+    border-radius: 50%;
+  }
+</style>

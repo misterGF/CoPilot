@@ -114,7 +114,7 @@
             <li class="dropdown user user-menu">
               <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                <img v-bind:src=demo.avatar class="user-image" alt="User Image">
+                <img v-bind:src="demo.avatar" class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                 <span class="hidden-xs">{{ demo.displayName }}</span>
               </a>
@@ -124,7 +124,8 @@
       </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
-    <sidebar :display-name="demo.displayName" />
+    <sidebar :display-name="demo.displayName"
+             :picture-url="demo.avatar" />
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -156,7 +157,7 @@
 import faker from 'faker'
 import config from '../config'
 import Sidebar from './Sidebar'
-require('hideseek')
+import 'hideseek'
 
 export default {
   name: 'Dash',
@@ -170,14 +171,7 @@ export default {
         fixed_layout: config.fixedLayout,
         hide_logo: config.hideLogoOnMobile
       },
-      me: '',
-      error: '',
-      api: {
-        servers: {
-          url: '', // Back end server
-          result: []
-        }
-      }
+      error: ''
     }
   },
   computed: {
