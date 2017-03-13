@@ -53,10 +53,11 @@ new Vue({
 
 // Check local storage to handle refreshes
 if (window.localStorage) {
-  var localUserString = window.localStorage.getItem('user')
+  var localUserString = window.localStorage.getItem('user') || 'null';
+  var localUser = JSON.parse(localUserString);
 
-  if (store.state.user !== localUserString) {
-    store.commit('SET_USER', JSON.parse(localUserString))
+  if (localUser && store.state.user !== localUser) {
+    store.commit('SET_USER', localUser)
     store.commit('SET_TOKEN', window.localStorage.getItem('token'))
   }
 }
