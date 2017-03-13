@@ -158,7 +158,7 @@ import config from '../config'
 import Sidebar from './Sidebar'
 require('hideseek')
 
-module.exports = {
+export default {
   name: 'Dash',
   components: {
     Sidebar

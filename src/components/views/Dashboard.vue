@@ -175,7 +175,7 @@
 <script>
 import Chart from 'chart.js'
 
-module.exports = {
+export default {
   data () {
     return {
       generateRandomNumbers (numbers, max, min) {
