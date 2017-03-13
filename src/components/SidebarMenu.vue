@@ -25,6 +25,32 @@
         <span class="page">Settings</span>
       </router-link>
     </li>
+    <li class="treeview">
+      <a href="#">
+        <i class="fa fa-folder-o"></i>
+        <span>Files</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left fa-fw pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu">
+        <li>
+          <a href="#">
+            <i class="fa fa-file-word-o"></i> Item 1
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-file-picture-o"></i> Item 2
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-file-pdf-o"></i> Item 3
+          </a>
+        </li>
+      </ul>
+    </li>
 
     <li class="header">LOGS</li>
     <li class="pageLink" v-on:click="toggleMenu">
