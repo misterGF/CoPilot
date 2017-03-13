@@ -47,6 +47,9 @@
 <script>
 import {stats} from '../../demo'
 
+const pluginURL = '/static/js/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js'
+const mapURL = '/static/js/plugins/jvectormap/jquery-jvectormap-world-mill.js'
+
 export default {
   name: 'Access',
   data () {
@@ -56,9 +59,8 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      // Add map
-      window.jQuery.getScript('/static/js/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js', (data, textStatus, jqxhr) => {
-        window.jQuery.getScript('/static/js/plugins/jvectormap/jquery-jvectormap-world-mill.js', (data, textStatus, jqxhr) => {
+      window.jQuery.getScript(pluginURL, () => {
+        window.jQuery.getScript(mapURL, () => {
           window.jQuery('#world-map-markers').vectorMap({
             map: 'world_mill'
           })
@@ -70,14 +72,19 @@ export default {
 </script>
 
 <style>
-.fake { color: 'red'}
+.fake {
+  color: 'red';
+}
+
 #world-map-markers svg {
   height: 355px;
 }
+
 .row.no-gutters {
   margin-right: 0;
   margin-left: 0;
 }
+
 .row.no-gutters > [class^="col-"],
 .row.no-gutters > [class*=" col-"] {
   padding-right: 0;
