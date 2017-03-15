@@ -2,6 +2,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import { sync } from 'vuex-router-sync'
 import routes from './routes'
 import store from './store'
 
@@ -41,6 +42,8 @@ router.beforeEach((to, from, next) => {
     next()
   }
 })
+
+sync(store, router)
 
 // Start out app!
 // eslint-disable-next-line no-new
