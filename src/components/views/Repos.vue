@@ -48,7 +48,7 @@
   </div>
 </template>
 <script>
-import api from '../../api'
+import axios from 'axios'
 
 export default {
   name: 'Repository',
@@ -61,20 +61,22 @@ export default {
   },
   methods: {
     callGitHub () {
-      api.request('GET', this.githubUrl).then(response => {
-        console.log('GitHub Response:', response)
+      axios.get(this.githubUrl)
+        .then(response => {
+          console.log('GitHub Response:', response)
 
-        if (response.status !== 200) {
-          this.error = response.statusText
-          return
-        }
+          if (response.status !== 200) {
+            this.error = response.statusText
+            return
+          }
 
-        this.response = response.data.items
-      }, response => {
-        // Request failed.
-        console.log('error', response)
-        this.error = response.statusText
-      })
+          this.response = response.data.items
+        })
+        .catch(error => {
+          // Request failed.
+          console.log('error', error.response)
+          this.error = error.response.statusText
+        })
     }
   },
   mounted () {

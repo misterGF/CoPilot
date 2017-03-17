@@ -4,9 +4,6 @@
         <div class="container">
           <img src="/static/img/logo.png" class="center-block logo">
           <div class="text-center col-md-4 col-sm-offset-4">
-            <!-- errors -->
-            <div v-if=response class="text-red"><p>{{response}}</p></div>
-
             <!-- login form -->
             <form class="ui form loginForm"  @submit.prevent="checkCreds">
 
@@ -21,6 +18,9 @@
               </div>
               <button type="submit" v-bind:class="'btn btn-primary btn-lg ' + loading">Submit</button>
             </form>
+
+            <!-- errors -->
+            <div v-if=response class="text-red"><p>{{response}}</p></div>
           </div>
         </div>
       </div>
@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import api from '../api'
+
 export default {
   name: 'Login',
   data (router) {
@@ -41,57 +43,53 @@ export default {
   },
   methods: {
     checkCreds () {
-      //  Change submit button
-      var self = this
-      var store = this.$store
+      const {username, password} = this
 
       this.toggleLoading()
       this.resetResponse()
-      store.commit('TOGGLE_LOADING')
+      this.$store.commit('TOGGLE_LOADING')
 
-      //  Login
-      this.$parent.callAPI('POST', '/login', { username: this.username, password: this.password }).then(function (response) {
-        store.commit('TOGGLE_LOADING')
+      /* Making API call to authenticate a user */
+      api.request('post', '/login', {username, password})
+      .then(response => {
+        this.toggleLoading()
 
-        if (response.data) {
-          var data = response.data
-
-          if (data.error) {
-            if (data.error.name) { //  Object from LDAP at this point
-              switch (data.error.name) {
-                case 'InvalidCredentialsError' : self.response = 'Username/Password incorrect. Please try again.'; break
-                default: self.response = data.error.name
-              }
-            } else {
-              self.response = data.error
-            }
+        var data = response.data
+        /* Checking if error object was returned from the server */
+        if (data.error) {
+          var errorName = data.error.name
+          if (errorName) {
+            this.response = errorName === 'InvalidCredentialsError'
+            ? 'Username/Password incorrect. Please try again.'
+            : errorName
           } else {
-            //  success. Let's load up the dashboard
-            if (data.user) {
-              store.commit('SET_USER', data.user)
-              var token = 'Bearer ' + data.token
-              store.commit('SET_TOKEN', token)
-
-              // Save to local storage as well
-              if (window.localStorage) {
-                window.localStorage.setItem('user', JSON.stringify(data.user))
-                window.localStorage.setItem('token', token)
-              }
-
-              this.$router.push(data.redirect)
-            }
+            this.response = data.error
           }
-        } else {
-          self.response = 'Did not receive a response. Please try again in a few minutes'
+
+          return
         }
 
-        self.toggleLoading()
-      }, function (response) {
-        // error
-        store.commit('TOGGLE_LOADING')
-        console.log('Error', response)
-        self.response = 'Server appears to be offline'
-        self.toggleLoading()
+        /* Setting user in the state and caching record to the localStorage */
+        if (data.user) {
+          var token = 'Bearer ' + data.token
+
+          this.$store.commit('SET_USER', data.user)
+          this.$store.commit('SET_TOKEN', token)
+
+          if (window.localStorage) {
+            window.localStorage.setItem('user', JSON.stringify(data.user))
+            window.localStorage.setItem('token', token)
+          }
+
+          this.$router.push(data.redirect)
+        }
+      })
+      .catch(error => {
+        this.$store.commit('TOGGLE_LOADING')
+        console.log(error)
+
+        this.response = 'Server appears to be offline'
+        this.toggleLoading()
       })
     },
     toggleLoading () {
