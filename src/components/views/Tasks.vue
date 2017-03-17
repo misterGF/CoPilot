@@ -39,13 +39,6 @@
       timeline () {
         return timeline
       }
-    },
-    methods: {
-      mounted () {
-        // debugger
-        // this.callGitHub()
-        console.log('inside of task')
-      }
     }
   }
 </script>

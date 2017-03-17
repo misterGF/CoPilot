@@ -16,12 +16,14 @@ const routes = [
   {
     path: '/login',
     component: LoginView
-  }, {
+  },
+  {
     path: '/',
     component: DashView,
     children: [
       {
-        path: '',
+        path: 'dashboard',
+        alias: '',
         component: DashboardView,
         name: 'Dashboard',
         meta: {description: 'Overview of environment'}

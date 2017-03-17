@@ -27,7 +27,9 @@
                   </div>
                   <div class="col-sm-4 border-right">
                     <div class="description-block">
-                      <button type="button" class="btn btn-block btn-default btn-lg"><a v-bind:href="repo.owner.html_url" target="_blank">Visit</a></button>
+                      <button type="button" class="btn btn-block btn-default btn-lg">
+                        <a v-bind:href="repo.owner.html_url" target="_blank">Visit</a>
+                      </button>
                     </div>
                   </div>
                   <div class="col-sm-4">
