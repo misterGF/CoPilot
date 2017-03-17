@@ -172,7 +172,7 @@ export default {
   },
   data: function () {
     return {
-      //section: 'Dash',
+      // section: 'Dash',
       year: new Date().getFullYear(),
       classes: {
         fixed_layout: config.fixedLayout,

@@ -1,4 +1,4 @@
-export default const mutations = {
+export default {
   TOGGLE_LOADING (state) {
     state.callingAPI = !state.callingAPI
   },

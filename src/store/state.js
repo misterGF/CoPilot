@@ -1,4 +1,4 @@
-export default const state = {
+export default {
   callingAPI: false,
   searching: '',
   serverURI: 'http://10.110.1.136:8080',
