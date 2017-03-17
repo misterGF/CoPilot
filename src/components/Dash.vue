@@ -24,11 +24,11 @@
             <li class="dropdown messages-menu">
               <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-envelope-o"></i>
-                <span class="label label-success">{{ state.userInfo.messages | count }}</span>
+                <span class="label label-success">{{ userInfo.messages | count }}</span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have {{ state.userInfo.messages | count }} message(s)</li>
-                <li v-if="state.userInfo.messages.length > 0">
+                <li class="header">You have {{ userInfo.messages | count }} message(s)</li>
+                <li v-if="userInfo.messages.length > 0">
                   <!-- inner menu: contains the messages -->
                   <ul class="menu">
                     <li><!-- start message -->
@@ -46,7 +46,7 @@
                   </ul>
                   <!-- /.menu -->
                 </li>
-                <li class="footer" v-if="state.userInfo.messages.length > 0"><a href="javascript:;">See All Messages</a></li>
+                <li class="footer" v-if="userInfo.messages.length > 0"><a href="javascript:;">See All Messages</a></li>
               </ul>
             </li>
             <!-- /.messages-menu -->
@@ -55,11 +55,11 @@
             <li class="dropdown notifications-menu">
               <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bell-o"></i>
-                <span class="label label-warning">{{ state.userInfo.notifications | count }}</span>
+                <span class="label label-warning">{{ userInfo.notifications | count }}</span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have {{ state.userInfo.notifications | count }} notification(s)</li>
-                <li v-if="state.userInfo.notifications.length > 0">
+                <li class="header">You have {{ userInfo.notifications | count }} notification(s)</li>
+                <li v-if="userInfo.notifications.length > 0">
                   <!-- Inner Menu: contains the notifications -->
                   <ul class="menu">
                     <li><!-- start notification -->
@@ -70,7 +70,7 @@
                     <!-- end notification -->
                   </ul>
                 </li>
-                <li class="footer" v-if="state.userInfo.notifications.length > 0"><a href="javascript:;">View all</a></li>
+                <li class="footer" v-if="userInfo.notifications.length > 0"><a href="javascript:;">View all</a></li>
               </ul>
             </li>
 
@@ -78,11 +78,11 @@
             <li class="dropdown tasks-menu">
               <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-flag-o"></i>
-                <span class="label label-danger">{{ state.userInfo.tasks | count }} </span>
+                <span class="label label-danger">{{ userInfo.tasks | count }} </span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have {{ state.userInfo.tasks | count }}  task(s)</li>
-                <li v-if="state.userInfo.tasks.length > 0">
+                <li class="header">You have {{ userInfo.tasks | count }}  task(s)</li>
+                <li v-if="userInfo.tasks.length > 0">
                   <!-- Inner menu: contains the tasks -->
                   <ul class="menu">
                     <li><!-- Task item -->
@@ -95,7 +95,12 @@
                         <!-- The progress bar -->
                         <div class="progress xs">
                           <!-- Change the css width attribute to simulate progress -->
-                          <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar progress-bar-aqua"
+                            style="width: 20%"
+                            role="progressbar"
+                            aria-valuenow="20"
+                            aria-valuemin="0"
+                            aria-valuemax="100">
                             <span class="sr-only">20% Complete</span>
                           </div>
                         </div>
@@ -104,7 +109,7 @@
                     <!-- end task item -->
                   </ul>
                 </li>
-                <li class="footer" v-if="state.userInfo.tasks.length > 0">
+                <li class="footer" v-if="userInfo.tasks.length > 0">
                   <a href="javascript:;">View all tasks</a>
                 </li>
               </ul>
@@ -137,7 +142,7 @@
         </h1>
         <ol class="breadcrumb">
           <li><a href="javascript:;"><i class="fa fa-home"></i>Home</a></li>
-          <li class="active">{{$route.name.toUpperCase() }}</li>
+          <li class="active">{{$route.name.toUpperCase()}}</li>
         </ol>
       </section>
 
@@ -155,6 +160,7 @@
 
 <script>
 import faker from 'faker'
+import { mapState } from 'vuex'
 import config from '../config'
 import Sidebar from './Sidebar'
 import 'hideseek'
@@ -166,7 +172,8 @@ export default {
   },
   data: function () {
     return {
-      section: 'Dash',
+      //section: 'Dash',
+      year: new Date().getFullYear(),
       classes: {
         fixed_layout: config.fixedLayout,
         hide_logo: config.hideLogoOnMobile
@@ -175,12 +182,9 @@ export default {
     }
   },
   computed: {
-    store () {
-      return this.$parent.$store
-    },
-    state () {
-      return this.store.state
-    },
+    ...mapState([
+      'userInfo'
+    ]),
     demo () {
       return {
         displayName: faker.name.findName(),
@@ -188,19 +192,12 @@ export default {
         email: faker.internet.email(),
         randomCard: faker.helpers.createCard()
       }
-    },
-    year () {
-      var y = new Date()
-      return y.getFullYear()
     }
   },
   methods: {
     changeloading () {
-      this.store.commit('TOGGLE_SEARCHING')
+      this.$store.commit('TOGGLE_SEARCHING')
     }
-  },
-  mounted () {
-    // Page is ready. Let's load our functions!
   }
 }
 </script>
