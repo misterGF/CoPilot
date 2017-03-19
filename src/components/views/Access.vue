@@ -1,5 +1,5 @@
 <template>
-  <section class='content'>
+  <section class="content">
     <h1 class="text-center">Access</h1>
     <h4 class="text-center">Where our users are coming from.</h4>
 
@@ -45,27 +45,22 @@
   </section>
 </template>
 <script>
+import {stats} from '../../demo'
+
+const pluginURL = '/static/js/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js'
+const mapURL = '/static/js/plugins/jvectormap/jquery-jvectormap-world-mill.js'
+
 export default {
   name: 'Access',
-  data: function () {
+  data () {
     return {
-      stats: [{
-        header: '8390',
-        text: 'Visitors'
-      }, {
-        header: '30%',
-        text: 'Referrals'
-      }, {
-        header: '70%',
-        text: 'Organic'
-      }]
+      stats
     }
   },
-  mounted: function () {
-    this.$nextTick(function () {
-      // Add map
-      window.jQuery.getScript('/static/js/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js', function (data, textStatus, jqxhr) {
-        window.jQuery.getScript('/static/js/plugins/jvectormap/jquery-jvectormap-world-mill.js', function (data, textStatus, jqxhr) {
+  mounted () {
+    this.$nextTick(() => {
+      window.jQuery.getScript(pluginURL, () => {
+        window.jQuery.getScript(mapURL, () => {
           window.jQuery('#world-map-markers').vectorMap({
             map: 'world_mill'
           })
@@ -77,14 +72,19 @@ export default {
 </script>
 
 <style>
-.fake { color: 'red'}
+.fake {
+  color: 'red';
+}
+
 #world-map-markers svg {
   height: 355px;
 }
+
 .row.no-gutters {
   margin-right: 0;
   margin-left: 0;
 }
+
 .row.no-gutters > [class^="col-"],
 .row.no-gutters > [class*=" col-"] {
   padding-right: 0;
