@@ -3,11 +3,11 @@
     <header class="main-header">
       <a href="/" class="logo">
         <!-- mini logo for sidebar mini 40x50 pixels -->
-        <span class="logo-mini"><img src="/static/img/logo_sm.png" alt="Logo" class="img-responsive center-block"></span>
+        <span class="logo-mini"><img src="/static/img/copilot-logo-white.svg" alt="Logo" class="img-responsive center-block"></span>
         <!-- logo for regular state and mobile devices -->
-        <div class="container logo-lg">
-          <div class="pull-left image"><img src="/static/img/logo_sm.png" alt="Logo" class="img-responsive"></div>
-          <div class="pull-left info">CoPilot</div>
+        <div class="logo-lg">
+          <img src="/static/img/copilot-logo-white.svg" alt="Logo" class="img-responsive">
+          <span>CoPilot</span>
         </div>
       </a>
 
@@ -227,6 +227,20 @@ export default {
   }
 }
 
+.logo-mini, .logo-lg {
+  text-align: left;
+
+  img {
+    padding: .4em;
+  }
+}
+
+.logo-lg {
+  img {
+    display: -webkit-inline-box;
+    width: 25%;
+  }
+}
 .user-panel {
   height: 4em;
 }
