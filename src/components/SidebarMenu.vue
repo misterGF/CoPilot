@@ -109,6 +109,18 @@ export default {
   }
 
   .sidebar-menu li.active>a>.fa-angle-left, .sidebar-menu li.active>a>.pull-right-container>.fa-angle-left {
-    transform: rotate(-90deg);
+    animation-name: rotate;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(-90deg);
+    }
   }
 </style>
