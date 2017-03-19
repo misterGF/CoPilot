@@ -102,3 +102,13 @@ export default {
   }
 }
 </script>
+<style>
+  /* override default */
+  .sidebar-menu>li>a {
+    padding: 12px 15px 12px 15px;
+  }
+
+  .sidebar-menu li.active>a>.fa-angle-left, .sidebar-menu li.active>a>.pull-right-container>.fa-angle-left {
+    transform: rotate(-90deg);
+  }
+</style>
