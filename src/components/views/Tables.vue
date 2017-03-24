@@ -197,15 +197,14 @@
 
 <script>
 import $ from 'jquery'
-
 // Require needed datatables modules
-require('datatables.net')
-require('datatables.net-bs')
+import 'datatables.net'
+import 'datatables.net-bs'
 
-module.exports = {
+export default {
   name: 'Tables',
-  mounted: function () {
-    this.$nextTick(function () {
+  mounted () {
+    this.$nextTick(() => {
       $('#example1').DataTable()
     })
   }
@@ -224,7 +223,9 @@ module.exports = {
 
 @import url('/static/js/plugins/datatables/dataTables.bootstrap.css');
 
-table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:after {
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after {
   font-family: 'FontAwesome';
 }
 

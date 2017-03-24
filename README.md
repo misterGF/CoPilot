@@ -1,15 +1,14 @@
-**CoPilot** is a fully responsive admin template that is forked from [AdminLTE](https://almsaeedstudio.com). The difference here is that this repo is tailored to use with vue.js. The UI is based on the [Bootstrap 3](https://github.com/twbs/bootstrap) framework. Highly customizable and easy to use. Fits many screen resolutions from small mobile devices to large desktops.
+**CoPilot** is a fully responsive admin template that is forked from [AdminLTE](https://almsaeedstudio.com). The difference here is that this repo is tailored to use with [Vue.js](https://vuejs.org). The UI is based on the [Bootstrap 3](https://github.com/twbs/bootstrap) framework. Highly customizable and easy to use. Fits many screen resolutions from small mobile devices to large desktops.
 
+<a href="https://copilot.misterGF.io" target="_blank">✈️️ Take it for a spin.</a>
 
-[Take it for a spin](https://copilot.misterGF.io)
-
-!["CoPilot Screenshot"](http://res.cloudinary.com/gatec21/image/upload/v1477947780/screenshotv2_ft7ayo.png)
+!["CoPilot Screenshot"](http://res.cloudinary.com/gatec21/image/upload/v1489954238/copilot-march-2017_ifdrlj.png)
 
 In an attempt to keep the project clean I have not included every plugin/feature that AdminLTE offers. You simply need to add the plugin in the /static/js/plugin folder to include them or use npm. I've included the popular ones.
 
 The structure of the app is scaffolded by [vue-cli](https://github.com/vuejs/vue-cli). Which is a simple CLI tool that setups our environment. CoPilot uses the webpack package. So we get a full-featured Webpack + vue-loader setup with hot reload, linting, testing & css extraction.
 
-We leverage all the goodies that vue.js offers. Vue-Router for routing. Vue-Resource for AJAX calls. Vuex for state management. **This project is using VueJS 2.0!**. Earlier versions can be found under the [vue 1.0 branch](https://github.com/misterGF/CoPilot/tree/vue1.0_version).
+We leverage all the goodies that vue.js offers. Vue-Router for routing. Vue-Resource for AJAX calls. Vuex for state management. **This project is using VueJS 2.0!** Earlier versions can be found under the [vue 1.0 branch](https://github.com/misterGF/CoPilot/tree/vue1.0_version).
 
 I also recommend that you install vue-devtools for Chrome so that you can easily inspect that state of vue.
 ![vue-devtools](http://res.cloudinary.com/gatec21/image/upload/v1461611064/copilot-vuetools_t1mvpg.png)
@@ -63,7 +62,8 @@ Depending on the component you are working on you should have the following link
 - AdminLTE - [online documentation](https://almsaeedstudio.com/themes/AdminLTE/documentation/index.html)
 - BootStrap 3 - [online documentation](https://github.com/twbs/bootstrap)
 - Vue.js - [online documentation](https://github.com/vuejs/vue)
-- Vue-Resource - [online documentation](https://github.com/vuejs/vue-resource)
+- ~~Vue-Resource~~ - No longer supported
+- Axios - [online documentation](https://github.com/mzabriskie/axios)
 - Vue-Router - [online documentation](https://github.com/vuejs/vue-router)
 - Vuex - [online documentation](https://github.com/vuejs/vuex)
 

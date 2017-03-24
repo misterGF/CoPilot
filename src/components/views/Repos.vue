@@ -27,7 +27,9 @@
                   </div>
                   <div class="col-sm-4 border-right">
                     <div class="description-block">
-                      <button type="button" class="btn btn-block btn-default btn-lg"><a v-bind:href="repo.owner.html_url" target="_blank">Visit</a></button>
+                      <button type="button" class="btn btn-block btn-default btn-lg">
+                        <a v-bind:href="repo.owner.html_url" target="_blank">Visit</a>
+                      </button>
                     </div>
                   </div>
                   <div class="col-sm-4">
@@ -46,9 +48,11 @@
   </div>
 </template>
 <script>
+import axios from 'axios'
+
 export default {
   name: 'Repository',
-  data: function () {
+  data () {
     return {
       githubUrl: 'https://api.github.com/search/repositories?q=language%3Ajavascript&sort=stars',
       response: null,
@@ -56,26 +60,26 @@ export default {
     }
   },
   methods: {
-    callGitHub: function () {
-      var repo = this
+    callGitHub () {
+      axios.get(this.githubUrl)
+        .then(response => {
+          console.log('GitHub Response:', response)
 
-      this.$parent.callAPI('GET', this.githubUrl).then(function (response) {
-        console.log('GitHub Response:', response)
+          if (response.status !== 200) {
+            this.error = response.statusText
+            return
+          }
 
-        if (response.status !== 200) {
-          repo.error = response.statusText
-          return
-        }
-
-        repo.response = response.data.items
-      }, function (response) {
-        // Request failed.
-        console.log('error', response)
-        repo.error = response.statusText
-      })
+          this.response = response.data.items
+        })
+        .catch(error => {
+          // Request failed.
+          console.log('error', error.response)
+          this.error = error.response.statusText
+        })
     }
   },
-  mounted: function () {
+  mounted () {
     this.callGitHub()
   }
 }

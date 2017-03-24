@@ -1,13 +1,13 @@
 <template>
-  <div class="wrapper">
+  <div :class="['wrapper', classes]">
     <header class="main-header">
       <a href="/" class="logo">
         <!-- mini logo for sidebar mini 40x50 pixels -->
-        <span class="logo-mini"><img src="/static/img/logo_sm.png" alt="Logo" class="img-responsive center-block"></span>
+        <span class="logo-mini"><img src="/static/img/copilot-logo-white.svg" alt="Logo" class="img-responsive center-block"></span>
         <!-- logo for regular state and mobile devices -->
-        <div class="container logo-lg">
-          <div class="pull-left image"><img src="/static/img/logo_sm.png" alt="Logo" class="img-responsive"></div>
-          <div class="pull-left info">CoPilot</div>
+        <div class="logo-lg">
+          <img src="/static/img/copilot-logo-white.svg" alt="Logo" class="img-responsive">
+          <span>CoPilot</span>
         </div>
       </a>
 
@@ -24,11 +24,11 @@
             <li class="dropdown messages-menu">
               <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-envelope-o"></i>
-                <span class="label label-success">{{ state.userInfo.messages | count }}</span>
+                <span class="label label-success">{{ userInfo.messages | count }}</span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have {{ state.userInfo.messages | count }} message(s)</li>
-                <li v-if="state.userInfo.messages.length > 0">
+                <li class="header">You have {{ userInfo.messages | count }} message(s)</li>
+                <li v-if="userInfo.messages.length > 0">
                   <!-- inner menu: contains the messages -->
                   <ul class="menu">
                     <li><!-- start message -->
@@ -46,7 +46,7 @@
                   </ul>
                   <!-- /.menu -->
                 </li>
-                <li class="footer" v-if="state.userInfo.messages.length > 0"><a href="javascript:;">See All Messages</a></li>
+                <li class="footer" v-if="userInfo.messages.length > 0"><a href="javascript:;">See All Messages</a></li>
               </ul>
             </li>
             <!-- /.messages-menu -->
@@ -55,11 +55,11 @@
             <li class="dropdown notifications-menu">
               <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bell-o"></i>
-                <span class="label label-warning">{{ state.userInfo.notifications | count }}</span>
+                <span class="label label-warning">{{ userInfo.notifications | count }}</span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have {{ state.userInfo.notifications | count }} notification(s)</li>
-                <li v-if="state.userInfo.notifications.length > 0">
+                <li class="header">You have {{ userInfo.notifications | count }} notification(s)</li>
+                <li v-if="userInfo.notifications.length > 0">
                   <!-- Inner Menu: contains the notifications -->
                   <ul class="menu">
                     <li><!-- start notification -->
@@ -70,7 +70,7 @@
                     <!-- end notification -->
                   </ul>
                 </li>
-                <li class="footer" v-if="state.userInfo.notifications.length > 0"><a href="javascript:;">View all</a></li>
+                <li class="footer" v-if="userInfo.notifications.length > 0"><a href="javascript:;">View all</a></li>
               </ul>
             </li>
 
@@ -78,11 +78,11 @@
             <li class="dropdown tasks-menu">
               <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-flag-o"></i>
-                <span class="label label-danger">{{ state.userInfo.tasks | count }} </span>
+                <span class="label label-danger">{{ userInfo.tasks | count }} </span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have {{ state.userInfo.tasks | count }}  task(s)</li>
-                <li v-if="state.userInfo.tasks.length > 0">
+                <li class="header">You have {{ userInfo.tasks | count }}  task(s)</li>
+                <li v-if="userInfo.tasks.length > 0">
                   <!-- Inner menu: contains the tasks -->
                   <ul class="menu">
                     <li><!-- Task item -->
@@ -95,7 +95,12 @@
                         <!-- The progress bar -->
                         <div class="progress xs">
                           <!-- Change the css width attribute to simulate progress -->
-                          <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar progress-bar-aqua"
+                            style="width: 20%"
+                            role="progressbar"
+                            aria-valuenow="20"
+                            aria-valuemin="0"
+                            aria-valuemax="100">
                             <span class="sr-only">20% Complete</span>
                           </div>
                         </div>
@@ -104,7 +109,7 @@
                     <!-- end task item -->
                   </ul>
                 </li>
-                <li class="footer" v-if="state.userInfo.tasks.length > 0">
+                <li class="footer" v-if="userInfo.tasks.length > 0">
                   <a href="javascript:;">View all tasks</a>
                 </li>
               </ul>
@@ -114,7 +119,7 @@
             <li class="dropdown user user-menu">
               <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
                 <!-- The user image in the navbar-->
-                <img v-bind:src=demo.avatar class="user-image" alt="User Image">
+                <img v-bind:src="demo.avatar" class="user-image" alt="User Image">
                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                 <span class="hidden-xs">{{ demo.displayName }}</span>
               </a>
@@ -124,57 +129,8 @@
       </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-
-      <!-- sidebar: style can be found in sidebar.less -->
-      <section class="sidebar">
-
-        <!-- Sidebar user panel (optional) -->
-        <div class="user-panel">
-          <div class="pull-left image">
-
-          </div>
-          <div class="pull-left info">
-            <div><p class="white">{{ demo.displayName }}</p></div>
-            <a href="javascript:;"><i class="fa fa-circle text-success"></i> Online</a>
-          </div>
-        </div>
-
-        <!-- search form (Optional) -->
-        <form v-on:submit.prevent class="sidebar-form">
-          <div class="input-group">
-            <input type="text" name="search" id="search" class="search form-control" data-toggle="hideseek" placeholder="Search Menus" data-list=".sidebar-menu">
-                <span class="input-group-btn">
-                  <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                  </button>
-                </span>
-          </div>
-        </form>
-        <!-- /.search form -->
-
-        <!-- Sidebar Menu -->
-        <ul class="sidebar-menu">
-          <li class="header">TOOLS</li>
-          <li class="active pageLink" v-on:click="toggleMenu"><router-link to="/"><i class="fa fa-desktop"></i><span class="page">Dashboard</span></router-link></li>
-          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/tables"><i class="fa fa-table"></i><span class="page">Tables</span></router-link></li>
-
-          <li class="header">ME</li>
-          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/tasks"><i class="fa fa-tasks"></i><span class="page">Tasks</span></router-link></li>
-          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/setting"><i class="fa fa-cog"></i><span class="page">Settings</span></router-link></li>
-
-          <li class="header">LOGS</li>
-          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/access"><i class="fa fa-book"></i><span class="page">Access</span></router-link></li>
-          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/server"><i class="fa fa-hdd-o"></i><span class="page">Server</span></router-link></li>
-          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/repos"><i class="fa fa-heart"></i><span class="page">Repos</span><small class="label pull-right bg-green">AJAX</small></router-link></li>
-
-          <li class="header">PAGES</li>
-          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/login"><i class="fa fa-circle-o text-yellow"></i> <span class="page">Login</span></router-link></li>
-          <li class="pageLink" v-on:click="toggleMenu"><router-link to="/404"><i class="fa fa-circle-o text-red"></i> <span class="page">404</span></router-link></li>
-        </ul>
-        <!-- /.sidebar-menu -->
-      </section>
-      <!-- /.sidebar -->
-    </aside>
+    <sidebar :display-name="demo.displayName"
+             :picture-url="demo.avatar" />
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -186,7 +142,7 @@
         </h1>
         <ol class="breadcrumb">
           <li><a href="javascript:;"><i class="fa fa-home"></i>Home</a></li>
-          <li class="active">{{$route.name.toUpperCase() }}</li>
+          <li class="active">{{$route.name.toUpperCase()}}</li>
         </ol>
       </section>
 
@@ -204,68 +160,91 @@
 
 <script>
 import faker from 'faker'
-require('hideseek')
+import { mapState } from 'vuex'
+import config from '../config'
+import Sidebar from './Sidebar'
+import 'hideseek'
 
-module.exports = {
+export default {
   name: 'Dash',
+  components: {
+    Sidebar
+  },
   data: function () {
     return {
-      section: 'Dash',
-      me: '',
-      error: '',
-      api: {
-        servers: {
-          url: '', // Back end server
-          result: []
-        }
-      }
+      // section: 'Dash',
+      year: new Date().getFullYear(),
+      classes: {
+        fixed_layout: config.fixedLayout,
+        hide_logo: config.hideLogoOnMobile
+      },
+      error: ''
     }
   },
   computed: {
-    store: function () {
-      return this.$parent.$store
-    },
-    state: function () {
-      return this.store.state
-    },
-    callAPI: function () {
-      return this.$parent.callAPI
-    },
-    demo: function () {
+    ...mapState([
+      'userInfo'
+    ]),
+    demo () {
       return {
         displayName: faker.name.findName(),
         avatar: faker.image.avatar(),
         email: faker.internet.email(),
         randomCard: faker.helpers.createCard()
       }
-    },
-    year: function () {
-      var y = new Date()
-      return y.getFullYear()
     }
   },
   methods: {
-    changeloading: function () {
-      this.store.commit('TOGGLE_SEARCHING')
-    },
-    toggleMenu: function (event) {
-      // remove active from li
-      window.$('li.pageLink').removeClass('active')
-
-      // Add it to the item that was clicked
-      event.toElement.parentElement.className = 'pageLink active'
+    changeloading () {
+      this.$store.commit('TOGGLE_SEARCHING')
     }
-  },
-  mounted: function () {
-    // Page is ready. Let's load our functions!
   }
 }
 </script>
 
-<style>
+<style lang="scss">
+.wrapper.fixed_layout {
+  .main-header {
+    position: fixed;
+    width: 100%;
+  }
+
+  .content-wrapper {
+    padding-top: 50px;
+  }
+
+  .main-sidebar {
+    position: fixed;
+    height: 100vh;
+  }
+}
+
+.wrapper.hide_logo {
+  @media (max-width: 767px) {
+    .main-header .logo {
+      display: none;
+    }
+  }
+}
+
+.logo-mini, .logo-lg {
+  text-align: left;
+
+  img {
+    padding: .4em;
+  }
+}
+
+.logo-lg {
+  img {
+    display: -webkit-inline-box;
+    width: 25%;
+  }
+}
 .user-panel {
   height: 4em;
 }
+
 hr.visible-xs-block {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.17);
