@@ -4,9 +4,9 @@
     <!-- Info boxes -->
     <div class='row'>
       <div class="alert alert-success alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
         <h4><i class="icon fa fa-check"></i> CoPilot is open source!</h4>
-        Click on icon to check out it out on github. <a href='https://github.com/misterGF/CoPilot' target='_blank'><i class='fa fa-github fa-2x'></i></a>
+        Click on icon to check it out on github. <a href='https://github.com/misterGF/CoPilot' target='_blank'><i class='fa fa-github fa-2x'></i></a>
       </div>
       <div class='col-md-3 col-sm-6 col-xs-12'>
         <div class='info-box'>
@@ -179,8 +179,8 @@ module.exports = {
   data: function () {
     return {
       generateRandomNumbers: function (numbers, max, min) {
-        var a = []
-        for (var i = 0; i < numbers; i++) {
+        let a = []
+        for (let i = 0; i < numbers; i++) {
           a.push(Math.floor(Math.random() * (max - min + 1)) + max)
         }
         return a
@@ -200,8 +200,8 @@ module.exports = {
   },
   mounted: function () {
     this.$nextTick(function () {
-      var ctx = document.getElementById('trafficBar').getContext('2d')
-      var config = {
+      let ctx = document.getElementById('trafficBar').getContext('2d')
+      let config = {
         type: 'line',
         data: {
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
@@ -238,8 +238,8 @@ module.exports = {
 
       new Chart(ctx, config) // eslint-disable-line no-new
 
-      var pieChartCanvas = document.getElementById('languagePie').getContext('2d')
-      var pieConfig = {
+      let pieChartCanvas = document.getElementById('languagePie').getContext('2d')
+      let pieConfig = {
         type: 'pie',
         data: {
           labels: ['HTML', 'JavaScript', 'CSS'],
