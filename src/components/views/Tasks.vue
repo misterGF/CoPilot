@@ -17,7 +17,7 @@
             <div class="timeline-body" v-if="line.body" v-html="line.body">
             </div>
             <div class="timeline-footer" v-if="line.buttons">
-              <a v-for="btn in line.buttons" v-bind:class="'btn btn-' + btn.type + ' btn-xs'" >{{btn.message}}</a>
+              <a v-for="btn in line.buttons" v-bind:class="'btn btn-' + btn.type + ' btn-xs'" v-bind:href="btn.href" v-bind:target="btn.target">{{btn.message}}</a>
             </div>
           </div>
         </li>
