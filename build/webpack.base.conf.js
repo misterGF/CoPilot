@@ -12,6 +12,8 @@ var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
 module.exports = {
   entry: {
+    adminlte: './static/less/AdminLTE.less',
+    adminltetheme: './static/less/skins/skin-blue.less', // swap for any other skin
     app: './src/main.js'
   },
   output: {
@@ -77,6 +79,10 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.less$/,
+        loader: 'autoprefixer!less'
       }
     ]
   },
