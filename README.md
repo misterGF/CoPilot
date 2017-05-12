@@ -3,7 +3,7 @@
 <a href="https://copilot.misterGF.io" target="_blank">✈️️ Take it for a spin.</a>
 
 
-[![Build Status](https://travis-ci.org/misterGF/CoPilot.svg?branch=master)](https://travis-ci.org/misterGF/CoPilot.svg?branch=master) 
+[![Build Status](https://travis-ci.org/misterGF/CoPilot.svg?branch=master)](https://travis-ci.org/misterGF/CoPilot)
 [![Build status](https://ci.appveyor.com/api/projects/status/wenct56narbt6r1l?svg=true)](https://ci.appveyor.com/project/misterGF/copilot)
 
 !["CoPilot Screenshot"](http://res.cloudinary.com/gatec21/image/upload/v1489954238/copilot-march-2017_ifdrlj.png)
