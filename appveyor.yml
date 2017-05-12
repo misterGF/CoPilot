@@ -1,10 +1,14 @@
-version: 1.0.{build}
 environment:
-  - nodejs_version: 7
-build_script:
-- ps: >-
-    Install-Product node $env:nodejs_version
-    npm install --loglevel=error
+  nodejs_version: "7"
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - npm install --loglevel=error # no warnings
 test_script:
-- cmd: >-
-    npm run build
+  # Output useful info for debugging.
+  - node --version
+  - npm --version
+  # run tests
+  - npm run build
+
+# Don't actually build.
+build: off
