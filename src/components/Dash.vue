@@ -1,16 +1,9 @@
 <template>
   <div :class="['wrapper', classes]">
     <header class="main-header">
-      <a href="/" class="logo">
-        <!-- mini logo for sidebar mini 40x50 pixels -->
-        <span class="logo-mini"><img src="/static/img/copilot-logo-white.svg" alt="Logo" class="img-responsive center-block"></span>
-        <!-- logo for regular state and mobile devices -->
-        <div class="logo-lg">
-          <img src="/static/img/copilot-logo-white.svg" alt="Logo" class="img-responsive">
-          <span>CoPilot</span>
-        </div>
-      </a>
-
+	<span class="logo-mini">
+		<a href="/"><img src="/static/img/copilot-logo-white.svg" alt="Logo" class="img-responsive center-block logo"></a>
+	</span>
       <!-- Header Navbar -->
       <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
@@ -31,12 +24,14 @@
                 <li v-if="userInfo.messages.length > 0">
                   <!-- inner menu: contains the messages -->
                   <ul class="menu">
-                    <li><!-- start message -->
+                    <li>
+                      <!-- start message -->
                       <a href="javascript:;">
                         <!-- Message title and timestamp -->
                         <h4>
                           Support Team
-                          <small><i class="fa fa-clock-o"></i> 5 mins</small>
+                          <small>
+                            <i class="fa fa-clock-o"></i> 5 mins</small>
                         </h4>
                         <!-- The message -->
                         <p>Why not consider this a test message?</p>
@@ -46,11 +41,13 @@
                   </ul>
                   <!-- /.menu -->
                 </li>
-                <li class="footer" v-if="userInfo.messages.length > 0"><a href="javascript:;">See All Messages</a></li>
+                <li class="footer" v-if="userInfo.messages.length > 0">
+                  <a href="javascript:;">See All Messages</a>
+                </li>
               </ul>
             </li>
             <!-- /.messages-menu -->
-
+  
             <!-- Notifications Menu -->
             <li class="dropdown notifications-menu">
               <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
@@ -62,7 +59,8 @@
                 <li v-if="userInfo.notifications.length > 0">
                   <!-- Inner Menu: contains the notifications -->
                   <ul class="menu">
-                    <li><!-- start notification -->
+                    <li>
+                      <!-- start notification -->
                       <a href="javascript:;">
                         <i class="fa fa-users text-aqua"></i> 5 new members joined today
                       </a>
@@ -70,10 +68,12 @@
                     <!-- end notification -->
                   </ul>
                 </li>
-                <li class="footer" v-if="userInfo.notifications.length > 0"><a href="javascript:;">View all</a></li>
+                <li class="footer" v-if="userInfo.notifications.length > 0">
+                  <a href="javascript:;">View all</a>
+                </li>
               </ul>
             </li>
-
+  
             <!-- Tasks Menu -->
             <li class="dropdown tasks-menu">
               <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
@@ -81,11 +81,12 @@
                 <span class="label label-danger">{{ userInfo.tasks | count }} </span>
               </a>
               <ul class="dropdown-menu">
-                <li class="header">You have {{ userInfo.tasks | count }}  task(s)</li>
+                <li class="header">You have {{ userInfo.tasks | count }} task(s)</li>
                 <li v-if="userInfo.tasks.length > 0">
                   <!-- Inner menu: contains the tasks -->
                   <ul class="menu">
-                    <li><!-- Task item -->
+                    <li>
+                      <!-- Task item -->
                       <a href="javascript:;">
                         <!-- Task title and progress text -->
                         <h3>
@@ -95,12 +96,7 @@
                         <!-- The progress bar -->
                         <div class="progress xs">
                           <!-- Change the css width attribute to simulate progress -->
-                          <div class="progress-bar progress-bar-aqua"
-                            style="width: 20%"
-                            role="progressbar"
-                            aria-valuenow="20"
-                            aria-valuemin="0"
-                            aria-valuemax="100">
+                          <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
                             <span class="sr-only">20% Complete</span>
                           </div>
                         </div>
@@ -114,7 +110,7 @@
                 </li>
               </ul>
             </li>
-
+  
             <!-- User Account Menu -->
             <li class="dropdown user user-menu">
               <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
@@ -129,9 +125,8 @@
       </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
-    <sidebar :display-name="demo.displayName"
-             :picture-url="demo.avatar" />
-
+    <sidebar :display-name="demo.displayName" :picture-url="demo.avatar" />
+  
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -141,18 +136,22 @@
           <small>{{ $route.meta.description }}</small>
         </h1>
         <ol class="breadcrumb">
-          <li><a href="javascript:;"><i class="fa fa-home"></i>Home</a></li>
+          <li>
+            <a href="javascript:;">
+              <i class="fa fa-home"></i>Home</a>
+          </li>
           <li class="active">{{$route.name.toUpperCase()}}</li>
         </ol>
       </section>
-
+  
       <router-view></router-view>
     </div>
     <!-- /.content-wrapper -->
-
+  
     <!-- Main Footer -->
     <footer class="main-footer">
-      <strong>Copyright &copy; {{year}} <a href="javascript:;">CoPilot</a>.</strong> All rights reserved.
+      <strong>Copyright &copy; {{year}}
+        <a href="javascript:;">CoPilot</a>.</strong> All rights reserved.
     </footer>
   </div>
   <!-- ./wrapper -->
@@ -227,11 +226,12 @@ export default {
   }
 }
 
-.logo-mini, .logo-lg {
+.logo-mini,
+.logo-lg {
   text-align: left;
 
   img {
-    padding: .4em;
+    padding: .4em !important;
   }
 }
 
@@ -241,6 +241,7 @@ export default {
     width: 25%;
   }
 }
+
 .user-panel {
   height: 4em;
 }
