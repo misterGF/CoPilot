@@ -1,30 +1,32 @@
 <template>
   <ul class="sidebar-menu">
     <li class="header">TOOLS</li>
-    <li class="pageLink">
-      <router-link to="/"><i class="fa fa-desktop"></i>
+    <router-link tag="li" class="pageLink" to="/">
+      <a>
+        <i class="fa fa-desktop"></i>
         <span class="page">Dashboard</span>
-      </router-link>
-    </li>
-    <li class="pageLink">
-      <router-link to="/tables"><i class="fa fa-table"></i>
+      </a>
+    </router-link>
+    <router-link tag="li" class="pageLink" to="/tables">
+      <a>
+        <i class="fa fa-table"></i>
         <span class="page">Tables</span>
-      </router-link>
-    </li>
+      </a>
+    </router-link>
 
     <li class="header">ME</li>
-    <li class="pageLink">
-      <router-link to="/tasks">
+    <router-link tag="li" class="pageLink" to="/tasks">
+      <a>
         <i class="fa fa-tasks"></i>
         <span class="page">Tasks</span>
-      </router-link>
-    </li>
-    <li class="pageLink">
-      <router-link to="/setting">
+      </a>
+    </router-link>
+    <router-link tag="li" class="pageLink" to="/setting">
+      <a>
         <i class="fa fa-cog"></i>
         <span class="page">Settings</span>
-      </router-link>
-    </li>
+      </a>
+    </router-link>
     <li class="treeview">
       <a href="#">
         <i class="fa fa-folder-o"></i>
@@ -53,35 +55,39 @@
     </li>
 
     <li class="header">LOGS</li>
-    <li class="pageLink">
-      <router-link to="/access"><i class="fa fa-book"></i>
+    <router-link tag="li" class="pageLink" to="/access">
+      <a>
+        <i class="fa fa-book"></i>
         <span class="page">Access</span>
-      </router-link>
-    </li>
-    <li class="pageLink">
-      <router-link to="/server"><i class="fa fa-hdd-o"></i>
+      </a>
+    </router-link>
+    <router-link tag="li" class="pageLink" to="/server">
+      <a>
+        <i class="fa fa-hdd-o"></i>
         <span class="page">Server</span>
-      </router-link>
-    </li>
-    <li class="pageLink">
-      <router-link to="/repos"><i class="fa fa-heart"></i>
+      </a>
+    </router-link>
+    <router-link tag="li" class="pageLink" to="/repos">
+      <a>
+        <i class="fa fa-heart"></i>
         <span class="page">Repos</span>
         <small class="label pull-right bg-green">AJAX</small>
-      </router-link>
-    </li>
+      </a>
+    </router-link>
 
     <li class="header">PAGES</li>
-    <li class="pageLink">
-      <router-link to="/login">
+    <router-link tag="li" class="pageLink" to="/login">
+      <a>
         <i class="fa fa-circle-o text-yellow"></i>
         <span class="page"> Login</span>
-      </router-link>
-    </li>
-    <li class="pageLink">
-      <router-link to="/404"><i class="fa fa-circle-o text-red"></i>
+      </a>
+    </router-link>
+    <router-link tag="li" class="pageLink" to="/404">
+      <a>
+        <i class="fa fa-circle-o text-red"></i>
         <span class="page"> 404</span>
-      </router-link>
-    </li>
+      </a>
+    </router-link>
   </ul>
 </template>
 <script>
