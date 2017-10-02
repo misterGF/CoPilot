@@ -51,7 +51,9 @@ export const timeline = [{
   body: 'Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle quora plaxo ideeli hulu weebly balihoo...',
   buttons: [{
     type: 'primary',
-    message: 'Read more'
+    message: 'Read more',
+    href: 'https://github.com/misterGF/CoPilot',
+    target: '_blank'
   }]
 },
 {
