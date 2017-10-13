@@ -1,33 +1,19 @@
 <template>
-  <div>
+  <div id="app">
     <router-view></router-view>
-    <div id="app"></div>
   </div>
 </template>
 
 <script>
   export default {
     name: 'App',
-    data: function () {
+    data () {
       return {
-        section: 'Head',
-        version: '0.10.0',
-        callingAPI: false,
-        serverURI: 'http://10.110.1.10:8080',
-        caller: this.$http
+        section: 'Head'
       }
     },
     methods: {
-      callAPI: function (method, url, data) {
-        this.callingAPI = true
-        url = url || this.serverURI // if no url is passed then inheret local server URI
-        return this.caller({
-          url: url,
-          method: method,
-          data: data
-        })
-      },
-      logout: function () {
+      logout () {
         this.$store.commit('SET_USER', null)
         this.$store.commit('SET_TOKEN', null)
 
