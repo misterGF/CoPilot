@@ -92,7 +92,7 @@
 </template>
 <script>
 export default {
-  name: 'SidebarName'
+  name: 'SidebarMenu'
 }
 </script>
 <style>
