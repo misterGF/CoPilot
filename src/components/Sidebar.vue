@@ -51,7 +51,10 @@ import SidebarMenu from './SidebarMenu'
 export default {
   name: 'Sidebar',
   props: ['displayName', 'pictureUrl'],
-  components: { SidebarMenu }
+  components: { SidebarMenu },
+  mounted: function () {
+    window.jQuery('[data-toggle="hideseek"]').off().hideseek()
+  }
 }
 </script>
 <style>

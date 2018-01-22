@@ -51,7 +51,7 @@ const routes = [
         path: 'server',
         component: ServerView,
         name: 'Servers',
-        meta: {description: 'List of our servers'}
+        meta: {description: 'List of our servers', requiresAuth: true}
       }, {
         path: 'repos',
         component: ReposView,

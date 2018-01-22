@@ -1,3 +1,6 @@
+// Import ES6 Promise
+import 'es6-promise/auto'
+
 // Import System requirements
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -24,6 +27,7 @@ Vue.use(VueRouter)
 var router = new VueRouter({
   routes: routes,
   mode: 'history',
+  linkExactActiveClass: 'active',
   scrollBehavior: function (to, from, savedPosition) {
     return savedPosition || { x: 0, y: 0 }
   }
@@ -31,8 +35,9 @@ var router = new VueRouter({
 
 // Some middleware to help us ensure the user is authenticated.
 router.beforeEach((to, from, next) => {
-  // window.console.log('Transition', transition)
-  if (to.auth && (to.router.app.$store.state.token === 'null')) {
+  if (to.matched.some(record => record.meta.requiresAuth) && (!router.app.$store.state.token || router.app.$store.state.token === 'null')) {
+    // this route requires auth, check if logged in
+    // if not, redirect to login page.
     window.console.log('Not authenticated')
     next({
       path: '/login',
@@ -45,15 +50,6 @@ router.beforeEach((to, from, next) => {
 
 sync(store, router)
 
-// Start out app!
-// eslint-disable-next-line no-new
-new Vue({
-  el: '#root',
-  router: router,
-  store: store,
-  render: h => h(AppView)
-})
-
 // Check local storage to handle refreshes
 if (window.localStorage) {
   var localUserString = window.localStorage.getItem('user') || 'null'
@@ -64,3 +60,12 @@ if (window.localStorage) {
     store.commit('SET_TOKEN', window.localStorage.getItem('token'))
   }
 }
+
+// Start out app!
+// eslint-disable-next-line no-new
+new Vue({
+  el: '#root',
+  router: router,
+  store: store,
+  render: h => h(AppView)
+})
