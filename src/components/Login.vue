@@ -147,4 +147,9 @@ body,
 .input-group input {
   height: 4em;
 }
+
+.input-group-addon i {
+  height: 15px;
+  width: 15px;
+}
 </style>
