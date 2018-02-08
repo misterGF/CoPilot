@@ -144,8 +144,20 @@ body,
   height: 4em;
 }
 
-.input-group input {
-  height: 4em;
+@media (max-width: 1241px) {
+  .input-group input {
+    height: 4em;
+  }
+}
+@media (min-width: 1242px) {
+  form {
+    padding-left: 20em;
+    padding-right: 20em;
+  }
+
+  .input-group input {
+    height: 6em;
+  }
 }
 
 .input-group-addon i {
