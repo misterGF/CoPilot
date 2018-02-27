@@ -21,15 +21,15 @@
 
       <!-- search form (Optional) -->
       <form v-on:submit.prevent class="sidebar-form">
-        <div class="input-group">
-          <input type="text"
+        <div class="input-group" id="searchContainer">
+          <span class="input-group-btn">
+            <input type="text"
             name="search"
             id="search"
             class="search form-control"
             data-toggle="hideseek" p
             laceholder="Search Menus"
             data-list=".sidebar-menu">
-          <span class="input-group-btn">
             <button type="submit" name="search" id="search-btn" class="btn btn-flat">
               <i class="fa fa-search"></i>
             </button>
@@ -52,13 +52,29 @@ export default {
   name: 'Sidebar',
   props: ['displayName', 'pictureUrl'],
   components: { SidebarMenu },
-  mounted: function () {
-    window.jQuery('[data-toggle="hideseek"]').off().hideseek()
+  mounted: function() {
+    window
+      .jQuery('[data-toggle="hideseek"]')
+      .off()
+      .hideseek()
   }
 }
 </script>
-<style>
-  .user-panel .image img {
-    border-radius: 50%;
-  }
+<style scope="local">
+.user-panel .image img {
+  border-radius: 50%;
+}
+
+#searchContainer {
+  height: 100%;
+  padding-bottom: 0em;
+}
+#search {
+  width: 80%;
+  float: right;
+}
+
+#search-btn {
+  width: 20%;
+}
 </style>
