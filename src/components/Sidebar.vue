@@ -20,7 +20,7 @@
       </div>
 
       <!-- search form (Optional) -->
-      <form v-on:submit.prevent class="sidebar-form">
+      <form v-on:submit.prevent class="sidebar-form" id="searchForm">
         <div class="input-group" id="searchContainer">
           <span class="input-group-btn">
             <input type="text"
@@ -64,7 +64,10 @@ export default {
 .user-panel .image img {
   border-radius: 50%;
 }
-
+#searchForm {
+  padding-left: 0em;
+  padding-right: 0em;
+}
 #searchContainer {
   height: 100%;
   padding-bottom: 0em;
