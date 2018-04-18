@@ -30,7 +30,7 @@
     <li class="treeview">
       <a href="#">
         <i class="fa fa-folder-o"></i>
-        <span>Files</span>
+        <span class="treeview-title">Files</span>
         <span class="pull-right-container">
           <i class="fa fa-angle-left fa-fw pull-right"></i>
         </span>
@@ -105,6 +105,10 @@ export default {
     animation-name: rotate;
     animation-duration: .2s;
     animation-fill-mode: forwards;
+  }
+  
+  .treeview-title {
+    z-index: 1;
   }
 
   @keyframes rotate {
