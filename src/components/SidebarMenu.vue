@@ -31,8 +31,8 @@
       <a href="#">
         <i class="fa fa-folder-o"></i>
         <span class="treeview-title">Files</span>
-        <span class="pull-right-container">
-          <i class="fa fa-angle-left fa-fw pull-right"></i>
+        <span class="pull-right-container pull-right">
+          <i class="fa fa-angle-left fa-fw"></i>
         </span>
       </a>
       <ul class="treeview-menu">
@@ -96,28 +96,29 @@ export default {
 }
 </script>
 <style>
-  /* override default */
-  .sidebar-menu>li>a {
-    padding: 12px 15px 12px 15px;
+/* override default */
+.sidebar-menu > li > a {
+  padding: 12px 15px 12px 15px;
+}
+
+.sidebar-menu li.active > a > .fa-angle-left,
+.sidebar-menu li.active > a > .pull-right-container > .fa-angle-left {
+  animation-name: rotate;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+.treeview-title {
+  z-index: 1;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
   }
 
-  .sidebar-menu li.active>a>.fa-angle-left, .sidebar-menu li.active>a>.pull-right-container>.fa-angle-left {
-    animation-name: rotate;
-    animation-duration: .2s;
-    animation-fill-mode: forwards;
+  100% {
+    transform: rotate(-90deg);
   }
-  
-  .treeview-title {
-    z-index: 1;
-  }
-
-  @keyframes rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-
-    100% {
-      transform: rotate(-90deg);
-    }
-  }
+}
 </style>
