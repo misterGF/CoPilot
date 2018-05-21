@@ -28,14 +28,17 @@ var router = new VueRouter({
   routes: routes,
   mode: 'history',
   linkExactActiveClass: 'active',
-  scrollBehavior: function (to, from, savedPosition) {
+  scrollBehavior: function(to, from, savedPosition) {
     return savedPosition || { x: 0, y: 0 }
   }
 })
 
 // Some middleware to help us ensure the user is authenticated.
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth) && (!router.app.$store.state.token || router.app.$store.state.token === 'null')) {
+  if (
+    to.matched.some(record => record.meta.requiresAuth) &&
+    (!router.app.$store.state.token || router.app.$store.state.token === 'null')
+  ) {
     // this route requires auth, check if logged in
     // if not, redirect to login page.
     window.console.log('Not authenticated')
@@ -69,3 +72,7 @@ new Vue({
   store: store,
   render: h => h(AppView)
 })
+
+// change this. demo
+window.bugsnagClient = window.bugsnag('02fe1c2caaf5874c50b6ee19534f5932')
+window.bugsnagClient.use(window.bugsnag__vue(Vue))
