@@ -2,13 +2,11 @@
   <div :class="['wrapper', classes]">
 
     <!-- Horizontal bar at top. Contains messages, notifications, tasks and user menu -->
-    <dash-header :avatar="demo.avatar"
-                 :display-name="demo.displayName"
-                 :roles="demo.roles"></dash-header>
+    <dash-header :user="user"></dash-header>
     
     <!-- Left side column. contains the logo and sidebar -->
-    <sidebar :display-name="demo.displayName" :picture-url="demo.avatar" />
-
+    <sidebar :user="user" />
+  
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -56,12 +54,11 @@ export default {
       classes: {
         fixed_layout: config.fixedLayout,
         hide_logo: config.hideLogoOnMobile
-      },
-      error: ''
+      }
     }
   },
   computed: {
-    demo () {
+    user () {
       return {
         displayName: faker.name.findName(),
         avatar: faker.image.avatar(),
