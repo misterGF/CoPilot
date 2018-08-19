@@ -36,9 +36,9 @@
 <script>
 import faker from 'faker'
 import config from '../config'
-import DashFooter from './DashFooter'
-import DashHeader from './DashHeader'
-import Sidebar from './Sidebar'
+import DashFooter from './layout/DashFooter'
+import DashHeader from './layout/DashHeader'
+import Sidebar from './layout/Sidebar'
 import 'hideseek'
 
 export default {
