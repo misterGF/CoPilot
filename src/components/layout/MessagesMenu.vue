@@ -9,20 +9,9 @@
       <li v-if="userInfo.messages.length > 0">
         <!-- inner menu: contains the messages -->
         <ul class="menu">
-          <li>
-            <!-- start message -->
-            <a href="javascript:;">
-              <!-- Message title and timestamp -->
-              <h4>
-                Support Team
-                <small>
-                  <i class="fa fa-clock-o"></i> 5 mins</small>
-              </h4>
-              <!-- The message -->
-              <p>Why not consider this a test message?</p>
-            </a>
-          </li>
-          <!-- end message -->
+          <message-item v-for="message in userInfo.messages"
+              :key="message.id"
+              :message="message"></message-item>
         </ul>
         <!-- /.menu -->
       </li>
@@ -35,9 +24,13 @@
 
 <script>
 import { mapState } from 'vuex'
+import MessageItem from './MessageItem'
 
 export default {
   name: 'MessagesMenu',
+  components: {
+    MessageItem
+  },
   computed: {
     ...mapState([
       'userInfo'
@@ -45,10 +38,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > h4,
-.navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > p {
-  margin-left: 0;
-}
-</style>

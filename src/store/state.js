@@ -5,7 +5,14 @@ export default {
   user: null,
   token: null,
   userInfo: {
-    messages: [{1: 'test', 2: 'test'}],
+    messages: [
+      {
+        id: 1,
+        title: 'Support Team',
+        body: 'Why not consider this a test message?',
+        createdAt: '17 min ago'
+      }
+    ],
     notifications: [],
     tasks: []
   }
