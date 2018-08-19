@@ -1,67 +1,51 @@
 <template>
   <!-- Main content -->
   <section class="content">
-    <!-- Info boxes -->
+    <!-- GitHub hint -->
     <div class="row">
-      <div class="alert alert-success alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <h4><i class="icon fa fa-check"></i> CoPilot is open source!</h4>
-        Click on icon to check it out on github. <a href="https://github.com/misterGF/CoPilot" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+      <div class="col-xs-12">
+        <alert :dismissible="true"
+               type="success"
+               :iconClasses="['fa', 'fa-check']"
+               title="CoPilot is open source!">
+          <span>Click on icon to check it out on github.</span>
+          <a href="https://github.com/misterGF/CoPilot" target="_blank">
+            <i class="fa fa-github fa-2x"></i>
+          </a>
+        </alert>
       </div>
-      <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box">
-          <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
 
-          <div class="info-box-content">
-            <span class="info-box-text">CPU Traffic</span>
-            <span class="info-box-number">90<small>%</small></span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
+      <!-- Info boxes -->
+      <div class="col-md-3 col-sm-6 col-xs-12">
+        <info-box color-class="bg-aqua"
+                  :icon-classes="['ion', 'ion-ios-gear-outline']"
+                  text="CPU Traffic"
+                  number="90%"></info-box>
       </div>
       <!-- /.col -->
       <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box">
-          <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Likes</span>
-            <span class="info-box-number">41,410</span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
+        <info-box color-class="bg-red"
+                  :icon-classes="['fa', 'fa-google-plus']"
+                  text="Likes"
+                  number="41,410"></info-box>
       </div>
       <!-- /.col -->
 
       <!-- fix for small devices only -->
       <div class="clearfix visible-sm-block"></div>
-
+      
       <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box">
-          <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Sales</span>
-            <span class="info-box-number">760</span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
+        <info-box color-class="bg-green"
+                  :icon-classes="['ion', 'ion-ios-cart-outline']"
+                  text="Sales"
+                  number="760"></info-box>
       </div>
       <!-- /.col -->
       <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box">
-          <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">New Members</span>
-            <span class="info-box-number">2,000</span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
-        <!-- /.info-box -->
+        <info-box color-class="bg-yellow"
+                  :icon-classes="['ion', 'ion-ios-people-outline']"
+                  text="New Members"
+                  number="2,000"></info-box>
       </div>
       <!-- /.col -->
     </div>
@@ -87,7 +71,9 @@
             </div>
           </div>
         </div>
-        <small class="space"><b>Pro Tip</b> Don"t forget to star us on github!</small>
+        <div class="text-center">
+          <small><b>Pro Tip</b> Don't forget to star us on github!</small>
+        </div>
       </div>
     </div>
     <!-- /.row -->
@@ -95,77 +81,41 @@
     <!-- Main row -->
     <div class="row">
       <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box bg-yellow">
-          <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Inventory</span>
-            <span class="info-box-number">5,200</span>
-
-            <div class="progress">
-              <div class="progress-bar" style="width: 50%"></div>
-            </div>
-                <span class="progress-description">
-                  50% Increase
-                </span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
+        <process-info-box color-class="bg-yellow"
+                          :icon-classes="['ion', 'ion-ios-pricetag-outline']"
+                          text="Inventory"
+                          number="5,200"
+                          progress="50"
+                          description="50% increase since May"></process-info-box>
       </div>
+      <!-- /.col -->
       <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box bg-green">
-          <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Mentions</span>
-            <span class="info-box-number">92,050</span>
-
-            <div class="progress">
-              <div class="progress-bar" style="width: 20%"></div>
-            </div>
-                <span class="progress-description">
-                  20% Increase
-                </span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
+        <process-info-box color-class="bg-green"
+                          :icon-classes="['ion', 'ion-ios-heart-outline']"
+                          text="Mentions"
+                          number="92,050"
+                          progress="20"
+                          description="20% increase in 30 days"></process-info-box>
       </div>
+      <!-- /.col -->
       <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box bg-red">
-          <span class="info-box-icon"><i class="ion ion-ios-cloud-download-outline"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Downloads</span>
-            <span class="info-box-number">114,381</span>
-
-            <div class="progress">
-              <div class="progress-bar" style="width: 70%"></div>
-            </div>
-                <span class="progress-description">
-                  70% Increase
-                </span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
+        <process-info-box color-class="bg-red"
+                          :icon-classes="['ion', 'ion-ios-cloud-download-outline']"
+                          text="Downloads"
+                          number="114,381"
+                          progress="70"
+                          description="70% increase since yesterday"></process-info-box>
       </div>
+      <!-- /.col -->
       <div class="col-md-3 col-sm-6 col-xs-12">
-        <div class="info-box bg-aqua">
-          <span class="info-box-icon"><i class="ion-ios-chatbubble-outline"></i></span>
-
-          <div class="info-box-content">
-            <span class="info-box-text">Direct Messages</span>
-            <span class="info-box-number">163,921</span>
-
-            <div class="progress">
-              <div class="progress-bar" style="width: 40%"></div>
-            </div>
-                <span class="progress-description">
-                  40% Increase
-                </span>
-          </div>
-          <!-- /.info-box-content -->
-        </div>
+        <process-info-box color-class="bg-aqua"
+                          :icon-classes="['ion', 'ion-ios-chatbubble-outline']"
+                          text="Direct Messages"
+                          number="163,921"
+                          progress="40"
+                          description="40% increase compared to last year"></process-info-box>
       </div>
+      <!-- /.col -->
     </div>
     <!-- /.row -->
   </section>
@@ -174,8 +124,17 @@
 
 <script>
 import Chart from 'chart.js'
+import Alert from '../widgets/Alert'
+import InfoBox from '../widgets/InfoBox'
+import ProcessInfoBox from '../widgets/ProcessInfoBox'
 
 export default {
+  name: 'Dashboard',
+  components: {
+    Alert,
+    InfoBox,
+    ProcessInfoBox
+  },
   data () {
     return {
       generateRandomNumbers (numbers, max, min) {
