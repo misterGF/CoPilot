@@ -81,42 +81,35 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu {
   width: 400px;
-
-  li.header {
-    padding: 0;
-
-    span.tab-link {
-      padding: 4px;
-      text-align: center;
-      cursor: pointer;
-
-      a {
-        color: #444;
-      }
-    }
-    span.tab-link.active {
-      font-weight: bold;
-      border-bottom: 2px solid #3c8dbc;
-    }
-
-    span:hover.tab-link > a {
-      color: #3c8dbc !important;
-    }
-  }
-
-  li > ul.menu {
-    max-height: 300px;
-
-    li > span {
-      padding: 10px;
-    }
-  }
-
-  li:hover.footer > a {
-    color: #3c8dbc !important;
-  }
+}
+.navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu li.header {
+  padding: 0;
+}
+.navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu li.header span.tab-link {
+  padding: 4px;
+  text-align: center;
+  cursor: pointer;
+}
+.navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu li.header span.tab-link a {
+  color: #444;
+}
+.navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu li.header span.tab-link.active {
+  font-weight: bold;
+  border-bottom: 2px solid #3c8dbc;
+}
+.navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu li.header span:hover.tab-link > a {
+  color: #3c8dbc !important;
+}
+.navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu li > ul.menu {
+  max-height: 300px;
+}
+.navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu li > ul.menu li > span {
+  padding: 10px;
+}
+.navbar-custom-menu > .navbar-nav > li.notifications-menu > .dropdown-menu li:hover.footer > a {
+  color: #3c8dbc !important;
 }
 </style>

@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > h4,
 .navbar-nav > .messages-menu > .dropdown-menu > li .menu > li > a > p {
   margin-left: 0;
