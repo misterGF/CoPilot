@@ -198,12 +198,12 @@
 <script>
 import $ from 'jquery'
 // Require needed datatables modules
-import 'datatables.net'
-import 'datatables.net-bs'
+require('datatables.net')
+require('datatables.net-bs')
 
 export default {
   name: 'Tables',
-  mounted () {
+  mounted() {
     this.$nextTick(() => {
       $('#example1').DataTable()
     })
@@ -230,14 +230,14 @@ table.dataTable thead .sorting_desc:after {
 }
 
 table.dataTable thead .sorting:after {
-  content: "\f0dc";
+  content: '\f0dc';
 }
 
 table.dataTable thead .sorting_asc:after {
-  content: "\f0dd";
+  content: '\f0dd';
 }
 
 table.dataTable thead .sorting_desc:after {
-  content: "\f0de";
+  content: '\f0de';
 }
 </style>

@@ -47,7 +47,7 @@
               </ul>
             </li>
             <!-- /.messages-menu -->
-  
+
             <!-- Notifications Menu -->
             <li class="dropdown notifications-menu">
               <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
@@ -73,7 +73,7 @@
                 </li>
               </ul>
             </li>
-  
+
             <!-- Tasks Menu -->
             <li class="dropdown tasks-menu">
               <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
@@ -110,7 +110,7 @@
                 </li>
               </ul>
             </li>
-  
+
             <!-- User Account Menu -->
             <li class="dropdown user user-menu">
               <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
@@ -126,7 +126,7 @@
     </header>
     <!-- Left side column. contains the logo and sidebar -->
     <sidebar :display-name="demo.displayName" :picture-url="demo.avatar" />
-  
+
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -143,11 +143,11 @@
           <li class="active">{{$route.name.toUpperCase()}}</li>
         </ol>
       </section>
-  
+
       <router-view></router-view>
     </div>
     <!-- /.content-wrapper -->
-  
+
     <!-- Main Footer -->
     <footer class="main-footer">
       <strong>Copyright &copy; {{year}}
@@ -201,45 +201,37 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.wrapper.fixed_layout {
-  .main-header {
-    position: fixed;
-    width: 100%;
-  }
-
-  .content-wrapper {
-    padding-top: 50px;
-  }
-
-  .main-sidebar {
-    position: fixed;
-    height: 100vh;
-  }
+<style>
+.wrapper.fixed_layout .main-header {
+  position: fixed;
+  width: 100%;
+}
+.wrapper.fixed_layout .content-wrapper {
+  padding-top: 50px;
+}
+.wrapper.fixed_layout .main-sidebar {
+  position: fixed;
+  height: 100vh;
 }
 
-.wrapper.hide_logo {
-  @media (max-width: 767px) {
-    .main-header .logo {
-      display: none;
-    }
+@media (max-width: 767px) {
+  .wrapper.hide_logo .main-header .logo {
+    display: none;
   }
 }
 
 .logo-mini,
 .logo-lg {
   text-align: left;
-
-  img {
-    padding: .4em !important;
-  }
+}
+.logo-mini img,
+.logo-lg img {
+  padding: 0.4em !important;
 }
 
-.logo-lg {
-  img {
-    display: -webkit-inline-box;
-    width: 25%;
-  }
+.logo-lg img {
+  display: -webkit-inline-box;
+  width: 25%;
 }
 
 .user-panel {
