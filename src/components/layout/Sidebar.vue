@@ -7,11 +7,11 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img :src="pictureUrl" />
+          <img :src="user.avatar" />
         </div>
         <div class="pull-left info">
           <div>
-            <p class="white">{{ displayName }}</p>
+            <p class="white">{{user.displayName}}</p>
           </div>
           <a href="javascript:;">
             <i class="fa fa-circle text-success"></i> Online
@@ -50,7 +50,7 @@ import SidebarMenu from './SidebarMenu'
 
 export default {
   name: 'Sidebar',
-  props: ['displayName', 'pictureUrl'],
+  props: ['user'],
   components: { SidebarMenu },
   mounted: function() {
     window
